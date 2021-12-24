@@ -1,6 +1,8 @@
 # Omnidirectional-Robot-Car
 A robot that has the ability to move in more directions than usually possible using unique mecanum wheels.
+
 Controlled using Joystick and NRF24 module.
+
 Made in Platform IO.
 
 ## Images
