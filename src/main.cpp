@@ -3,10 +3,8 @@
 #include <Arduino.h>
 
 // Constants for Interrupt Pins
-// Change values if not using Arduino Uno
-
-const byte MOTOR_A = 3;  // Motor 1 Interrupt Pin - INT 1 - Front Left Motor
-const byte MOTOR_B = 2;  // Motor 2 Interrupt Pin - INT 0 - Front Right Motor
+const byte MOTOR_A = 3;  // Motor 1 Interrupt Pin - INT 1 - Front Right Motor
+const byte MOTOR_B = 2;  // Motor 2 Interrupt Pin - INT 0 - Front Left Motor
 const byte MOTOR_C = 18; // Motor 3 Interrupt Pin - INT 2 - Back Left Motor
 const byte MOTOR_D = 19; // Motor 4 Interrupt Pin - INT 3 - Back Right Motor
 
@@ -69,23 +67,48 @@ void ISR_countD()
 // Function to convert from centimeters to steps
 int CMtoSteps(float cm)
 {
-
   int result;                                        // Final calculation result
   float circumference = (wheeldiameter * 3.14) / 10; // Calculate wheel circumference in cm
   float cm_step = circumference / stepcount;         // CM per Step
-
-  float f_result = cm / cm_step; // Calculate result as a float
-  result = (int)f_result;        // Convert to an integer (note this is NOT rounded)
+  float f_result = cm / cm_step;                     // Calculate result as a float
+  result = (int)f_result;                            // Convert to an integer (note this is NOT rounded)
 
   return result; // End and return result
 }
 
 /* 
-resetCounters()
+SetMotorDirection()
+  Sets the pins on a motor to either HIGH or LOW based on the inputs.
+  Input Types: int
+  Inputs: pinNumber1, pinNumber2, pinLevel1, pinLevel2
+*/
+void SetMotorDirection(int pinNumber1, int pinNumber2, int pinLevel1, int pinLevel2)
+{
+  if (pinLevel1 == 1)
+  {
+    digitalWrite(pinNumber1, HIGH);
+  }
+  else
+  {
+    digitalWrite(pinNumber1, LOW);
+  }
+  if (pinLevel2 == 1)
+  {
+    digitalWrite(pinNumber2, HIGH);
+  }
+  else
+  {
+    digitalWrite(pinNumber2, LOW);
+  }
+}
+
+/* 
+ResetCounters()
   Resets all step counters to 0.
+  Input Types: None
   Inputs: None
 */
-void resetCounters()
+void ResetCounters()
 {
   counter_A = 0; //  reset counter A to zero
   counter_B = 0; //  reset counter B to zero
@@ -94,11 +117,12 @@ void resetCounters()
 }
 
 /* 
-runMotors()
+RunMotors()
   Runs the motors at specified speed and for a specified length.
-  Inputs: int steps, int speed
+  Input Types: int
+  Inputs: steps, speed
 */
-void runMotors(int step, int speed)
+void RunMotors(int step, int speed)
 {
   while (step > counter_A && step > counter_B && step > counter_C && step > counter_D)
   {
@@ -140,188 +164,114 @@ void runMotors(int step, int speed)
   analogWrite(enB, 0);
   analogWrite(enC, 0);
   analogWrite(enD, 0);
-  // Reset all counters
-  resetCounters();
+
+  ResetCounters(); // Reset all counters
 }
 
 // Function to Move Forward
 void MoveForward(int steps, int mspeed)
 {
-  // Reset all counters
-  resetCounters();
+  ResetCounters(); // Reset all counters
 
-  // Set Motor A forward
-  digitalWrite(in1, HIGH);
-  digitalWrite(in2, LOW);
+  SetMotorDirection(in1, in2, 1, 0); // Set Motor A forward
+  SetMotorDirection(in3, in4, 1, 0); // Set Motor B forward
+  SetMotorDirection(in5, in6, 0, 1); // Set Motor C forward
+  SetMotorDirection(in7, in8, 0, 1); // Set Motor D forward
 
-  // Set Motor B forward
-  digitalWrite(in3, HIGH);
-  digitalWrite(in4, LOW);
-
-  // Set Motor C forward
-  digitalWrite(in5, LOW);
-  digitalWrite(in6, HIGH);
-
-  // Set Motor D forward
-  digitalWrite(in7, LOW);
-  digitalWrite(in8, HIGH);
-
-  // Run motors for specified steps and speed
-  runMotors(steps, mspeed);
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
 // Function to Move in Reverse
 void MoveReverse(int steps, int mspeed)
 {
-  // Reset all counters
-  resetCounters();
+  ResetCounters(); // Reset all counters
 
-  // Set Motor A reverse
-  digitalWrite(in1, LOW);
-  digitalWrite(in2, HIGH);
+  SetMotorDirection(in1, in2, 0, 1); // Set Motor A reverse
+  SetMotorDirection(in3, in4, 0, 1); // Set Motor B reverse
+  SetMotorDirection(in5, in6, 1, 0); // Set Motor C reverse
+  SetMotorDirection(in7, in8, 1, 0); // Set Motor D reverse
 
-  // Set Motor B reverse
-  digitalWrite(in3, LOW);
-  digitalWrite(in4, HIGH);
-
-  // Set Motor C reverse
-  digitalWrite(in5, HIGH);
-  digitalWrite(in6, LOW);
-
-  // Set Motor D reverse
-  digitalWrite(in7, HIGH);
-  digitalWrite(in8, LOW);
-
-  // Run motors for specified steps and speed
-  runMotors(steps, mspeed);
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
 // Function to Move Right Sideways
 void MoveRight(int steps, int mspeed)
 {
-  // Reset all counters
-  resetCounters();
+  ResetCounters(); // Reset all counters
 
-  // Set Motor A reverse
-  digitalWrite(in1, LOW);
-  digitalWrite(in2, HIGH);
+  SetMotorDirection(in1, in2, 0, 1); // Set Motor A reverse
+  SetMotorDirection(in3, in4, 1, 0); // Set Motor B forward
+  SetMotorDirection(in5, in6, 1, 0); // Set Motor C reverse
+  SetMotorDirection(in7, in8, 0, 1); // Set Motor D forward
 
-  // Set Motor B forward
-  digitalWrite(in3, HIGH);
-  digitalWrite(in4, LOW);
-
-  // Set Motor C reverse
-  digitalWrite(in5, HIGH);
-  digitalWrite(in6, LOW);
-
-  // Set Motor D forward
-  digitalWrite(in7, LOW);
-  digitalWrite(in8, HIGH);
-
-  // Run motors for specified steps and speed
-  runMotors(steps, mspeed);
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
 // Function to Move Left Sideways
 void MoveLeft(int steps, int mspeed)
 {
-  resetCounters();
+  ResetCounters(); // Reset all counters
 
-  // Set Motor A forward
-  digitalWrite(in1, HIGH);
-  digitalWrite(in2, LOW);
+  SetMotorDirection(in1, in2, 1, 0); // Set Motor A forward
+  SetMotorDirection(in3, in4, 0, 1); // Set Motor B reverse
+  SetMotorDirection(in5, in6, 0, 1); // Set Motor C forward
+  SetMotorDirection(in7, in8, 1, 0); // Set Motor D reverse
 
-  // Set Motor B reverse
-  digitalWrite(in3, LOW);
-  digitalWrite(in4, HIGH);
-
-  // Set Motor C forward
-  digitalWrite(in5, LOW);
-  digitalWrite(in6, HIGH);
-
-  // Set Motor D reverse
-  digitalWrite(in7, HIGH);
-  digitalWrite(in8, LOW);
-
-  // Run motors for specified steps and speed
-  runMotors(steps, mspeed);
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
 // Function to Move Right Sideways
 void MoveRightForward(int steps, int mspeed)
 {
-  // Reset all counters
-  resetCounters();
+  ResetCounters(); // Reset all counters
 
-  // Set Motor A stopped
-  digitalWrite(in1, LOW);
-  digitalWrite(in2, LOW);
+  SetMotorDirection(in1, in2, 0, 0); // Set Motor A stopped
+  SetMotorDirection(in3, in4, 1, 0); // Set Motor B forward
+  SetMotorDirection(in5, in6, 0, 0); // Set Motor C stopped
+  SetMotorDirection(in7, in8, 0, 1); // Set Motor D forward
 
-  // Set Motor B Forward
-  digitalWrite(in3, HIGH);
-  digitalWrite(in4, LOW);
-
-  // Set Motor C stopped
-  digitalWrite(in5, LOW);
-  digitalWrite(in6, LOW);
-
-  // Set Motor D Forward
-  digitalWrite(in7, LOW);
-  digitalWrite(in8, HIGH);
-
-  // Run motors for specified steps and speed
-  runMotors(steps, mspeed);
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
 // Function to Move Left Sideways
 void MoveLeftForward(int steps, int mspeed)
 {
-  // Reset all counters
-  resetCounters();
+  ResetCounters(); // Reset all counters
 
-  // Set Motor A forward
-  digitalWrite(in1, HIGH);
-  digitalWrite(in2, LOW);
+  SetMotorDirection(in1, in2, 1, 0); // Set Motor A forward
+  SetMotorDirection(in3, in4, 0, 0); // Set Motor B stopped
+  SetMotorDirection(in5, in6, 0, 1); // Set Motor C forward
+  SetMotorDirection(in7, in8, 0, 0); // Set Motor D stopped
 
-  // Set Motor B stopped
-  digitalWrite(in3, LOW);
-  digitalWrite(in4, LOW);
-
-  // Set Motor C forward
-  digitalWrite(in5, LOW);
-  digitalWrite(in6, HIGH);
-
-  // Set Motor D stopped
-  digitalWrite(in7, LOW);
-  digitalWrite(in8, LOW);
-
-  // Run motors for specified steps and speed
-  runMotors(steps, mspeed);
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
-void setup()
+void attachInterrupts()
 {
   // Attach the Interrupts to their ISR's
   attachInterrupt(digitalPinToInterrupt(MOTOR_A), ISR_countA, RISING); // Increase counter A when speed sensor pin goes High
   attachInterrupt(digitalPinToInterrupt(MOTOR_B), ISR_countB, RISING); // Increase counter B when speed sensor pin goes High
   attachInterrupt(digitalPinToInterrupt(MOTOR_C), ISR_countC, RISING); // Increase counter C when speed sensor pin goes High
   attachInterrupt(digitalPinToInterrupt(MOTOR_D), ISR_countD, RISING); // Increase counter D when speed sensor pin goes High
+}
+
+void setup()
+{
+  attachInterrupts(); // Attach the Interrupts to their ISR's
 
   // Test Motor Movement:
-  // MoveForward(CMtoSteps(20), 255); // Ex: Forward at 255 speed for 20cm
-  // delay(1000);                     // Wait one second
-  // MoveReverse(CMtoSteps(20), 255);
-  // delay(1000); // Wait one second
-  // MoveRight(CMtoSteps(20), 255);
-  // delay(1000); // Wait one second
-  // MoveLeft(CMtoSteps(20), 255);
-  // delay(1000); // Wait one second
-  // MoveForward(CMtoSteps(20), 255);
-  
+  MoveForward(CMtoSteps(20), 255); // Ex: Forward at 255 speed for 20cm
+  delay(1000);                     // Wait one second
+  MoveReverse(CMtoSteps(20), 255);
+  delay(1000);
+  MoveRight(CMtoSteps(20), 255);
+  delay(1000);
+  MoveLeft(CMtoSteps(20), 255);
+  delay(1000);
   MoveLeftForward(CMtoSteps(20), 255);
-  delay(1000); // Wait one second
+  delay(1000);
   MoveRightForward(CMtoSteps(20), 255);
-  delay(1000); // Wait one second
+  delay(1000);
 }
 
 void loop()
