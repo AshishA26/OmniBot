@@ -22,12 +22,12 @@ volatile int counter_B = 0;
 volatile int counter_C = 0;
 volatile int counter_D = 0;
 
-// Motor A (front left)
+// Motor A (front right)
 int enA = 5;
 int in1 = 25;
 int in2 = 24;
 
-// Motor B (front right)
+// Motor B (front left)
 int enB = 6;
 int in3 = 23;
 int in4 = 22;
@@ -196,8 +196,8 @@ void MoveReverse(int steps, int mspeed)
   runMotors(steps, mspeed);
 }
 
-// Function to Spin Right
-void SpinRight(int steps, int mspeed)
+// Function to Move Right Sideways
+void MoveRight(int steps, int mspeed)
 {
   // Reset all counters
   resetCounters();
@@ -222,8 +222,8 @@ void SpinRight(int steps, int mspeed)
   runMotors(steps, mspeed);
 }
 
-// Function to Spin Left
-void SpinLeft(int steps, int mspeed)
+// Function to Move Left Sideways
+void MoveLeft(int steps, int mspeed)
 {
   resetCounters();
 
@@ -247,6 +247,58 @@ void SpinLeft(int steps, int mspeed)
   runMotors(steps, mspeed);
 }
 
+// Function to Move Right Sideways
+void MoveRightForward(int steps, int mspeed)
+{
+  // Reset all counters
+  resetCounters();
+
+  // Set Motor A stopped
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+
+  // Set Motor B Forward
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+
+  // Set Motor C stopped
+  digitalWrite(in5, LOW);
+  digitalWrite(in6, LOW);
+
+  // Set Motor D Forward
+  digitalWrite(in7, LOW);
+  digitalWrite(in8, HIGH);
+
+  // Run motors for specified steps and speed
+  runMotors(steps, mspeed);
+}
+
+// Function to Move Left Sideways
+void MoveLeftForward(int steps, int mspeed)
+{
+  // Reset all counters
+  resetCounters();
+
+  // Set Motor A forward
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+
+  // Set Motor B stopped
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, LOW);
+
+  // Set Motor C forward
+  digitalWrite(in5, LOW);
+  digitalWrite(in6, HIGH);
+
+  // Set Motor D stopped
+  digitalWrite(in7, LOW);
+  digitalWrite(in8, LOW);
+
+  // Run motors for specified steps and speed
+  runMotors(steps, mspeed);
+}
+
 void setup()
 {
   // Attach the Interrupts to their ISR's
@@ -256,16 +308,20 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(MOTOR_D), ISR_countD, RISING); // Increase counter D when speed sensor pin goes High
 
   // Test Motor Movement:
-
-  MoveForward(CMtoSteps(20), 255); // Ex: Forward at 255 speed for 20cm
-  delay(1000);                     // Wait one second
-  MoveReverse(CMtoSteps(20), 255);
+  // MoveForward(CMtoSteps(20), 255); // Ex: Forward at 255 speed for 20cm
+  // delay(1000);                     // Wait one second
+  // MoveReverse(CMtoSteps(20), 255);
+  // delay(1000); // Wait one second
+  // MoveRight(CMtoSteps(20), 255);
+  // delay(1000); // Wait one second
+  // MoveLeft(CMtoSteps(20), 255);
+  // delay(1000); // Wait one second
+  // MoveForward(CMtoSteps(20), 255);
+  
+  MoveLeftForward(CMtoSteps(20), 255);
   delay(1000); // Wait one second
-  SpinRight(CMtoSteps(20), 255);
+  MoveRightForward(CMtoSteps(20), 255);
   delay(1000); // Wait one second
-  SpinLeft(CMtoSteps(20), 255);
-  delay(1000); // Wait one second
-  MoveForward(CMtoSteps(20), 255);
 }
 
 void loop()
