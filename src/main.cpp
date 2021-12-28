@@ -220,7 +220,7 @@ void MoveLeft(int steps, int mspeed)
   RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
-// Function to Move Right Sideways
+// Function to Move Right Forward
 void MoveRightForward(int steps, int mspeed)
 {
   ResetCounters(); // Reset all counters
@@ -233,7 +233,7 @@ void MoveRightForward(int steps, int mspeed)
   RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
-// Function to Move Left Sideways
+// Function to Move Left Forward
 void MoveLeftForward(int steps, int mspeed)
 {
   ResetCounters(); // Reset all counters
@@ -242,6 +242,32 @@ void MoveLeftForward(int steps, int mspeed)
   SetMotorDirection(in3, in4, 0, 0); // Set Motor B stopped
   SetMotorDirection(in5, in6, 0, 1); // Set Motor C forward
   SetMotorDirection(in7, in8, 0, 0); // Set Motor D stopped
+
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
+}
+
+// Function to Move Right reverse
+void MoveRightReverse(int steps, int mspeed)
+{
+  ResetCounters(); // Reset all counters
+
+  SetMotorDirection(in1, in2, 0, 1); // Set Motor A reverse
+  SetMotorDirection(in3, in4, 0, 0); // Set Motor B stopped
+  SetMotorDirection(in5, in6, 1, 0); // Set Motor C reverse
+  SetMotorDirection(in7, in8, 0, 0); // Set Motor D stopped
+
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
+}
+
+// Function to Move Left reverse
+void MoveLeftReverse(int steps, int mspeed)
+{
+  ResetCounters(); // Reset all counters
+
+  SetMotorDirection(in1, in2, 0, 0); // Set Motor A stopped
+  SetMotorDirection(in3, in4, 0, 1); // Set Motor B reverse
+  SetMotorDirection(in5, in6, 0, 0); // Set Motor C stopped
+  SetMotorDirection(in7, in8, 1, 0); // Set Motor D forward
 
   RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
@@ -271,6 +297,10 @@ void setup()
   MoveLeftForward(CMtoSteps(20), 255);
   delay(1000);
   MoveRightForward(CMtoSteps(20), 255);
+  delay(1000);
+  MoveLeftReverse(CMtoSteps(20), 255);
+  delay(1000);
+  MoveRightReverse(CMtoSteps(20), 255);
   delay(1000);
 }
 
