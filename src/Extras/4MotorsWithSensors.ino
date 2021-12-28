@@ -1,6 +1,7 @@
-// Use with 4 yellow motors.
+// Use with 4 yellow motors. This code has encoder code.
 
 #include <Arduino.h>
+#include <TimerOne.h>
 
 // Constants for Interrupt Pins
 // Change values if not using Arduino Uno
@@ -14,7 +15,7 @@ const byte MOTOR_D = 19; // Motor 4 Interrupt Pin - INT 3 - Back Right Motor
 const float stepcount = 20.00; // 20 Slots in disk, change if different
 
 // Constant for wheel diameter
-const float wheeldiameter = 48; // Wheel diameter in millimeters, change if different
+const float wheeldiameter = 66.10; // Wheel diameter in millimeters, change if different
 
 // Integers for pulse counters
 volatile int counter_A = 0;
@@ -23,24 +24,24 @@ volatile int counter_C = 0;
 volatile int counter_D = 0;
 
 // Motor A (front left)
-int enA = 5;
-int in1 = 25;
-int in2 = 24;
+int enA = 6;
+int in1 = 22;
+int in2 = 23;
 
 // Motor B (front right)
-int enB = 6;
-int in3 = 23;
-int in4 = 22;
+int enB = 5;
+int in3 = 25;
+int in4 = 24;
 
 // Motor C (back left)
 int enC = 12;
-int in5 = 11;
-int in6 = 10;
+int in5 = 8;
+int in6 = 9;
 
 // Motor D (back right)
 int enD = 7;
-int in7 = 9;
-int in8 = 8;
+int in7 = 10;
+int in8 = 11;
 
 // Interrupt Service Routines
 
@@ -159,12 +160,12 @@ void MoveForward(int steps, int mspeed)
   digitalWrite(in4, LOW);
 
   // Set Motor C forward
-  digitalWrite(in5, LOW);
-  digitalWrite(in6, HIGH);
+  digitalWrite(in5, HIGH);
+  digitalWrite(in6, LOW);
 
   // Set Motor D forward
-  digitalWrite(in7, LOW);
-  digitalWrite(in8, HIGH);
+  digitalWrite(in7, HIGH);
+  digitalWrite(in8, LOW);
 
   // Run motors for specified steps and speed
   runMotors(steps, mspeed);
@@ -185,12 +186,12 @@ void MoveReverse(int steps, int mspeed)
   digitalWrite(in4, HIGH);
 
   // Set Motor C reverse
-  digitalWrite(in5, HIGH);
-  digitalWrite(in6, LOW);
+  digitalWrite(in5, LOW);
+  digitalWrite(in6, HIGH);
 
   // Set Motor D reverse
-  digitalWrite(in7, HIGH);
-  digitalWrite(in8, LOW);
+  digitalWrite(in7, LOW);
+  digitalWrite(in8, HIGH);
 
   // Run motors for specified steps and speed
   runMotors(steps, mspeed);
@@ -266,6 +267,20 @@ void setup()
   SpinLeft(CMtoSteps(20), 255);
   delay(1000); // Wait one second
   MoveForward(CMtoSteps(20), 255);
+
+  // MoveForward(CMtoSteps(50), 255);   // Forward half a metre at 255 speed
+  // delay(1000);                       // Wait one second
+  // MoveReverse(10, 255);              // Reverse 10 steps at 255 speed
+  // delay(1000);                       // Wait one second
+  // MoveForward(10, 150);              // Forward 10 steps at 150 speed
+  // delay(1000);                       // Wait one second
+  // MoveReverse(CMtoSteps(25.4), 200); // Reverse 25.4 cm at 200 speed
+  // delay(1000);                       // Wait one second
+  // SpinRight(20, 255);                // Spin right 20 steps at 255 speed
+  // delay(1000);                       // Wait one second
+  // SpinLeft(60, 175);                 // Spin left 60 steps at 175 speed
+  // delay(1000);                       // Wait one second
+  // MoveForward(1, 255);               // Forward 1 step at 255 speed
 }
 
 void loop()
