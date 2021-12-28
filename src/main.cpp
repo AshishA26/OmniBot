@@ -272,6 +272,32 @@ void MoveLeftReverse(int steps, int mspeed)
   RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
+// Function to Move Right reverse
+void SpinRight(int steps, int mspeed)
+{
+  ResetCounters(); // Reset all counters
+
+  SetMotorDirection(in1, in2, 0, 1); // Set Motor A reverse
+  SetMotorDirection(in3, in4, 1, 0); // Set Motor B stopped
+  SetMotorDirection(in5, in6, 0, 1); // Set Motor C reverse
+  SetMotorDirection(in7, in8, 1, 0); // Set Motor D stopped
+
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
+}
+
+// Function to Move Left reverse
+void SpinLeft(int steps, int mspeed)
+{
+  ResetCounters(); // Reset all counters
+
+  SetMotorDirection(in1, in2, 1, 0); // Set Motor A stopped
+  SetMotorDirection(in3, in4, 0, 1); // Set Motor B reverse
+  SetMotorDirection(in5, in6, 1, 0); // Set Motor C stopped
+  SetMotorDirection(in7, in8, 0, 1); // Set Motor D forward
+
+  RunMotors(steps, mspeed); // Run motors for specified steps and speed
+}
+
 void attachInterrupts()
 {
   // Attach the Interrupts to their ISR's
@@ -301,6 +327,10 @@ void setup()
   MoveLeftReverse(CMtoSteps(20), 255);
   delay(1000);
   MoveRightReverse(CMtoSteps(20), 255);
+  delay(1000);
+  SpinLeft(CMtoSteps(20), 255);
+  delay(1000);
+  SpinRight(CMtoSteps(20), 255);
   delay(1000);
 }
 
