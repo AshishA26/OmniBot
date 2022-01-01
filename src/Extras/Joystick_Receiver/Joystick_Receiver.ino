@@ -23,9 +23,9 @@ void setup() {
   Serial.begin(9600);
   radio.begin();
   radio.openReadingPipe(0, address);
-  //radio.setAutoAck(false);
-  //radio.setDataRate(RF24_250KBPS);
-  radio.setPALevel(RF24_PA_MIN); // Make LOW maybe
+  radio.setAutoAck(false);
+  radio.setDataRate(RF24_250KBPS);
+  radio.setPALevel(RF24_PA_MIN); // It was originally LOW
   radio.startListening(); //  Set the module as receiver
   resetData();
 }
@@ -41,16 +41,45 @@ void loop() {
     resetData(); // If connection is lost, reset the data. It prevents unwanted behavior, for example if a drone has a throttle up and we lose connection, it can keep flying unless we reset the values
   }
   // Print the data in the Serial Monitor
-  Serial.print("j1PotX: ");
+  
+  // Use this portion below to see in the SERIAL PLOTTER
+  
   Serial.print(data.j1PotX);
-  Serial.print("; j1PotY: ");
+  Serial.print(" ");
   Serial.print(data.j1PotY);
-  Serial.print("; button1: ");
+  Serial.print(" ");
+  Serial.print(data.j2PotX);
+  Serial.print(" ");
+  Serial.print(data.j2PotY);
+  Serial.print(" ");
   Serial.print(data.button1);
-  Serial.print("; j2PotX: ");
-  Serial.println(data.j2PotX);
-  Serial.print("; j2PotY: ");
-  Serial.println(data.j2PotY);  
+  Serial.print(" ");
+  Serial.print(data.button2);
+  Serial.print(" ");
+  Serial.print(data.button3);
+  Serial.print(" ");
+  Serial.print(data.button4);
+  Serial.println("");
+
+  // Use this portion below to see in SERIAL MONITOR
+
+  //  Serial.print("j1PotX: ");
+  //  Serial.print(data.j1PotX);
+  //  Serial.print("; j1PotY: ");
+  //  Serial.print(data.j1PotY);
+  //  Serial.print("; j2PotX: ");
+  //  Serial.println(data.j2PotX);
+  //  Serial.print("; j2PotY: ");
+  //  Serial.println(data.j2PotY);
+  //  Serial.print("; button1: ");
+  //  Serial.print(data.button1);
+  //  Serial.print("; button2: ");
+  //  Serial.print(data.button2);
+  //  Serial.print("; button3: ");
+  //  Serial.print(data.button3);
+  //  Serial.print("; button4: ");
+  //  Serial.print(data.button4);
+  //  Serial.println("");
 }
 void resetData() {
   // Reset the values when there is no radio connection - Set initial default values

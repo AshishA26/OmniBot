@@ -3,16 +3,16 @@
 #include <RF24.h>
 #include <Wire.h>
 // Define the digital inputs
-#define jB1 3  // Joystick button 1
-#define jB2 4  // Joystick button 2
-#define b1 2   // Button 1
-#define b2 6   // Button 2
-#define b3 2   // Button 3
+#define jB1 2  // Joystick button 1
+#define jB2 3  // Joystick button 2
+#define b1 4   // Button 1
+#define b2 5   // Button 2
+#define b3 6   // Button 3
 #define b4 9   // Button 4
-#define j1PotXPin A1
-#define j1PotYPin A2
-#define j2PotXPin A3
-#define j2PotYPin A4
+#define j1PotXPin A0 //Joystick 1 axis X
+#define j1PotYPin A1 //Joystick 1 axis Y
+#define j2PotXPin A2 //Joystick 2 axis X
+#define j2PotYPin A3 //Joystick 2 axis Y
 
 RF24 radio(7, 8);   // nRF24L01 (CE, CSN)
 const byte address[6] = "00001"; // Address
@@ -38,9 +38,9 @@ void setup() {
   // Define the radio communication
   radio.begin();
   radio.openWritingPipe(address);
-  //radio.setAutoAck(false);
-  //radio.setDataRate(RF24_250KBPS);
-  radio.setPALevel(RF24_PA_MIN); // Make LOW maybe
+  radio.setAutoAck(false);
+  radio.setDataRate(RF24_250KBPS);
+  radio.setPALevel(RF24_PA_MIN); // It was originally LOW
 
   // Activate the Arduino internal pull-up resistors
   pinMode(jB1, INPUT_PULLUP);
