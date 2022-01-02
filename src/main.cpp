@@ -409,20 +409,31 @@ void loop()
   {              // If current time is more then 1 second since we have recived the last data, that means we have lost connection
     resetData(); // If connection is lost, reset the data. It prevents unwanted behavior, for example if a drone has a throttle up and we lose connection, it can keep flying unless we reset the values
   }
-  // Print the data in the Serial Monitor
-
-  // Use this portion below to see in the SERIAL PLOTTER
 
   if (data.j1PotX > 130)
   {
-    data.j1PotX = map(data.j1PotX, 130, 255, 150, 240);
+    data.j1PotX = map(data.j1PotX, 130, 255, 150, 255);
     MoveForward(CMtoSteps(1), data.j1PotX);
   }
   else if (data.j1PotX < 126)
   {
-    data.j1PotX = map(data.j1PotX, 126, 0, 150, 240);
+    data.j1PotX = map(data.j1PotX, 126, 0, 150, 255);
     MoveReverse(CMtoSteps(1), data.j1PotX);
   }
+  else if (data.j1PotY < 5 && data.j1PotX < 135 && data.j1PotX > 120)
+  {
+    data.j1PotY = map(data.j1PotY, 126, 0, 150, 255);
+    MoveLeft(CMtoSteps(1), data.j1PotX);
+  }
+  else if (data.j1PotY > 250 && data.j1PotX < 135 && data.j1PotX > 120)
+  {
+    data.j1PotY = map(data.j1PotY, 130, 255, 150, 255);
+    MoveRight(CMtoSteps(1), data.j1PotX);
+  }
+
+  // Print the data in the Serial Monitor
+
+  // Use this portion below to see in the SERIAL PLOTTER
 
   // Serial.print(data.j1PotX);
   // Serial.print(" ");
