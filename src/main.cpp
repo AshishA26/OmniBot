@@ -415,12 +415,12 @@ void loop()
 
   if (data.j1PotX > 130)
   {
-    data.j1PotX = map(data.j1PotX, 130, 255, 50, 255);
+    data.j1PotX = map(data.j1PotX, 130, 255, 150, 240);
     MoveForward(CMtoSteps(1), data.j1PotX);
   }
   else if (data.j1PotX < 126)
   {
-    data.j1PotX = map(data.j1PotX, 0, 126, 50, 255);
+    data.j1PotX = map(data.j1PotX, 126, 0, 150, 240);
     MoveReverse(CMtoSteps(1), data.j1PotX);
   }
 
