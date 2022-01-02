@@ -5,13 +5,12 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 
-RF24 radio(32, 33); // nRF24L01 (CE, CSN)
+RF24 radio(32, 33);   // nRF24L01 (CE, CSN)
 const byte address[6] = "00001";
 unsigned long lastReceiveTime = 0;
 unsigned long currentTime = 0;
 // Max size of this struct is 32 bytes - NRF24L01 buffer limit
-struct Data_Package
-{
+struct Data_Package {
   byte j1PotX;
   byte j1PotY;
   byte j1Button;
@@ -321,19 +320,6 @@ void SpinLeft(int steps, int mspeed)
   RunMotors(steps, mspeed); // Run motors for specified steps and speed
 }
 
-// Function to Move Left reverse
-void Stop(int steps, int mspeed)
-{
-  ResetCounters(); // Reset all counters
-
-  SetMotorDirection(in1, in2, 0, 0); // Set Motor A stopped
-  SetMotorDirection(in3, in4, 0, 0); // Set Motor B reverse
-  SetMotorDirection(in5, in6, 0, 0); // Set Motor C stopped
-  SetMotorDirection(in7, in8, 0, 0); // Set Motor D forward
-
-  RunMotors(steps, mspeed); // Run motors for specified steps and speed
-}
-
 void attachInterrupts()
 {
   // Attach the Interrupts to their ISR's
@@ -343,8 +329,7 @@ void attachInterrupts()
   attachInterrupt(digitalPinToInterrupt(MOTOR_D), ISR_countD, RISING); // Increase counter D when speed sensor pin goes High
 }
 
-void resetData()
-{
+void resetData() {
   // Reset the values when there is no radio connection - Set initial default values
   data.j1PotX = 127;
   data.j1PotY = 127;
@@ -367,7 +352,7 @@ void setup()
   radio.setAutoAck(false);
   radio.setDataRate(RF24_250KBPS);
   radio.setPALevel(RF24_PA_MIN); // It was originally LOW
-  radio.startListening();        //  Set the module as receiver
+  radio.startListening(); //  Set the module as receiver
   resetData();
 
   attachInterrupts(); // Attach the Interrupts to their ISR's
@@ -398,48 +383,35 @@ void setup()
 void loop()
 {
   // Check whether there is data to be received
-  if (radio.available())
-  {
+  if (radio.available()) {
     radio.read(&data, sizeof(Data_Package)); // Read the whole data and store it into the 'data' structure
-    lastReceiveTime = millis();              // At this moment we have received the data
+    lastReceiveTime = millis(); // At this moment we have received the data
   }
   // Check whether we keep receving data, or we have a connection between the two modules
   currentTime = millis();
-  if (currentTime - lastReceiveTime > 1000)
-  {              // If current time is more then 1 second since we have recived the last data, that means we have lost connection
+  if ( currentTime - lastReceiveTime > 1000 ) { // If current time is more then 1 second since we have recived the last data, that means we have lost connection
     resetData(); // If connection is lost, reset the data. It prevents unwanted behavior, for example if a drone has a throttle up and we lose connection, it can keep flying unless we reset the values
   }
   // Print the data in the Serial Monitor
-
+  
   // Use this portion below to see in the SERIAL PLOTTER
-
-  if (data.j1PotX > 130)
-  {
-    data.j1PotX = map(data.j1PotX, 130, 255, 50, 255);
-    MoveForward(CMtoSteps(1), data.j1PotX);
-  }
-  else if (data.j1PotX < 126)
-  {
-    data.j1PotX = map(data.j1PotX, 0, 126, 50, 255);
-    MoveReverse(CMtoSteps(1), data.j1PotX);
-  }
-
-  // Serial.print(data.j1PotX);
-  // Serial.print(" ");
-  // Serial.print(data.j1PotY);
-  // Serial.print(" ");
-  // Serial.print(data.j2PotX);
-  // Serial.print(" ");
-  // Serial.print(data.j2PotY);
-  // Serial.print(" ");
-  // Serial.print(data.button1);
-  // Serial.print(" ");
-  // Serial.print(data.button2);
-  // Serial.print(" ");
-  // Serial.print(data.button3);
-  // Serial.print(" ");
-  // Serial.print(data.button4);
-  // Serial.println("");
+  
+  Serial.print(data.j1PotX);
+  Serial.print(" ");
+  Serial.print(data.j1PotY);
+  Serial.print(" ");
+  Serial.print(data.j2PotX);
+  Serial.print(" ");
+  Serial.print(data.j2PotY);
+  Serial.print(" ");
+  Serial.print(data.button1);
+  Serial.print(" ");
+  Serial.print(data.button2);
+  Serial.print(" ");
+  Serial.print(data.button3);
+  Serial.print(" ");
+  Serial.print(data.button4);
+  Serial.println("");
 
   // Use this portion below to see in SERIAL MONITOR
 
