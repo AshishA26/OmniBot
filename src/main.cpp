@@ -410,43 +410,43 @@ void loop()
     resetData(); // If connection is lost, reset the data. It prevents unwanted behavior, for example if a drone has a throttle up and we lose connection, it can keep flying unless we reset the values
   }
 
-  if (data.j1PotX > 150)
+  if (data.j1PotY > 150)
   {
     MoveLeft(CMtoSteps(1), 255);
   }
-  else if (data.j1PotX < 100)
+  else if (data.j1PotY < 100)
   {
     MoveRight(CMtoSteps(1), 255);
   }
-  else if (data.j1PotY > 160)
-  {
-    MoveForward(CMtoSteps(1), 255);
-  }
-  else if (data.j1PotY < 100)
+  else if (data.j1PotX > 160)
   {
     MoveReverse(CMtoSteps(1), 255);
   }
-  else if (data.j2PotX < 100 & data.j2PotY> 160)
+  else if (data.j1PotX < 100)
   {
-    MoveRightForward(CMtoSteps(1), 255);
+    MoveForward(CMtoSteps(1), 255);
   }
-  else if (data.j2PotX > 160 & data.j2PotY > 160)
-  {
-    MoveLeftForward(CMtoSteps(1), 255);
-  }
-  else if (data.j2PotX < 100 & data.j2PotY < 100)
+  else if (data.j2PotY < 100 & data.j2PotX> 160)
   {
     MoveRightReverse(CMtoSteps(1), 255);
   }
-  else if (data.j2PotX > 160 & data.j2PotY < 100)
+  else if (data.j2PotY > 160 & data.j2PotX > 160)
   {
     MoveLeftReverse(CMtoSteps(1), 255);
   }
-  else if (data.j2PotX < 100)
+  else if (data.j2PotY < 100 & data.j2PotX < 100)
+  {
+    MoveRightForward(CMtoSteps(1), 255);
+  }
+  else if (data.j2PotY > 160 & data.j2PotX < 100)
+  {
+    MoveLeftForward(CMtoSteps(1), 255);
+  }
+  else if (data.j2PotY < 100)
   {
     SpinRight(CMtoSteps(1), 255);
   }
-  else if (data.j2PotX > 150)
+  else if (data.j2PotY > 150)
   {
     SpinLeft(CMtoSteps(1), 255);
   }
