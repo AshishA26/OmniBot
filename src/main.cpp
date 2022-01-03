@@ -426,7 +426,7 @@ void loop()
   {
     MoveForward(CMtoSteps(1), 255);
   }
-  else if (data.j2PotY < 100 & data.j2PotX> 160)
+  else if (data.j2PotY<100 & data.j2PotX> 160)
   {
     MoveRightReverse(CMtoSteps(1), 255);
   }
@@ -454,30 +454,6 @@ void loop()
   {
     Stop();
   }
-  // if (data.j1PotY < 135 && data.j1PotY > 121 && data.j1PotX < 135 && data.j1PotX > 121)
-  // {
-  //   Stop();
-  // }
-  // else if (data.j1PotX > 135 && data.j1PotY < 135 && data.j1PotY > 121)
-  // {
-  //   data.j1PotX = map(data.j1PotX, 135, 255, 200, 255);
-  //   MoveForward(CMtoSteps(1), data.j1PotX);
-  // }
-  // else if (data.j1PotX < 121 && data.j1PotY < 135 && data.j1PotY > 121)
-  // {
-  //   data.j1PotX = map(data.j1PotX, 121, 0, 200, 255);
-  //   MoveReverse(CMtoSteps(1), data.j1PotX);
-  // }
-  // else if (data.j1PotY < 121 && data.j1PotX < 135 && data.j1PotX > 121)
-  // {
-  //   data.j1PotY = map(data.j1PotY, 121, 0, 200, 255);
-  //   MoveLeft(CMtoSteps(1), data.j1PotX);
-  // }
-  // else if (data.j1PotY > 135 && data.j1PotX < 135 && data.j1PotX > 121)
-  // {
-  //   data.j1PotY = map(data.j1PotY, 135, 255, 200, 255);
-  //   MoveRight(CMtoSteps(1), data.j1PotX);
-  // }
 
   // Print the data in the Serial Monitor
 

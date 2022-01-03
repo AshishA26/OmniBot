@@ -4,7 +4,7 @@ Controlled using Joystick and NRF24 module.
 Made in Platform IO.
 
 ## Instructions
-- Use the Joystick_Receiver.ino in the src/Extras folder
+- Use the Joystick_Transmitter.ino in the src/Joystick_Transmitter folder
 - More coming soon
 
 ## Images
