@@ -426,19 +426,19 @@ void loop()
   {
     MoveForward(CMtoSteps(1), 255);
   }
-  else if (data.j2PotY<100 & data.j2PotX> 160)
+  else if (data.j2PotY < 100 && data.j2PotX > 160)
   {
     MoveRightReverse(CMtoSteps(1), 255);
   }
-  else if (data.j2PotY > 160 & data.j2PotX > 160)
+  else if (data.j2PotY > 160 && data.j2PotX > 160)
   {
     MoveLeftReverse(CMtoSteps(1), 255);
   }
-  else if (data.j2PotY < 100 & data.j2PotX < 100)
+  else if (data.j2PotY < 100 && data.j2PotX < 100)
   {
     MoveRightForward(CMtoSteps(1), 255);
   }
-  else if (data.j2PotY > 160 & data.j2PotX < 100)
+  else if (data.j2PotY > 160 && data.j2PotX < 100)
   {
     MoveLeftForward(CMtoSteps(1), 255);
   }
