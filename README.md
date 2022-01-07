@@ -1,4 +1,4 @@
-# Omnidirectional-Robot-Car
+# OmniBot
 A remote-controlled robot that has the ability to move in more directions than usually possible using unique mecanum wheels. 
 Controlled using custom-designed Joystick and nRF24L01 module.
 Programmed in `Platform IO` and models created in `Solidworks`.
