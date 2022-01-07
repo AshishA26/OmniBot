@@ -1,0 +1,452 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "OmniBot"
+Date "2022-01-06"
+Rev "1"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 "By: Ashish Agrahari"
+$EndDescr
+$Comp
+L myelin-kicad:nRF24L01+ U?
+U 1 1 61D4F1B6
+P 5500 6950
+F 0 "U?" H 5500 7465 50  0000 C CNN
+F 1 "nRF24L01+_Receiver" H 5500 7374 50  0000 C CNN
+F 2 "MODULE" H 5500 7050 50  0001 C CNN
+F 3 "DOCUMENTATION" H 5500 6900 50  0001 C CNN
+	1    5500 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 1950 6550 2350
+Wire Wire Line
+	6550 2750 6550 3150
+Wire Wire Line
+	6550 3150 7950 3150
+Wire Wire Line
+	7950 2650 6550 2650
+Wire Wire Line
+	7950 1950 6550 1950
+$Comp
+L Motor:Motor_DC M?
+U 1 1 61D8D396
+P 7950 2850
+F 0 "M?" H 8108 2846 50  0000 L CNN
+F 1 "Motor_DC_FrontLeft" H 8108 2755 50  0000 L CNN
+F 2 "" H 7950 2760 50  0001 C CNN
+F 3 "~" H 7950 2760 50  0001 C CNN
+	1    7950 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Motor:Motor_DC M?
+U 1 1 61D8D39C
+P 7950 2150
+F 0 "M?" H 8108 2146 50  0000 L CNN
+F 1 "Motor_DC_FrontRight" H 8108 2055 50  0000 L CNN
+F 2 "" H 7950 2060 50  0001 C CNN
+F 3 "~" H 7950 2060 50  0001 C CNN
+	1    7950 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 2450 6550 2450
+$Comp
+L AA_Custom_Components:L298N_BREAKOUT U?
+U 1 1 61D8D3A3
+P 5950 2550
+F 0 "U?" H 5950 2125 50  0000 C CNN
+F 1 "L298N_BREAKOUT_Front" H 5950 2034 50  0000 C CNN
+F 2 "" H 6000 3100 50  0001 L CNN
+F 3 "" H 6100 2800 50  0001 C CNN
+	1    5950 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5350 2300 3600 2300
+Wire Wire Line
+	3600 2400 5350 2400
+Wire Wire Line
+	5350 2500 3600 2500
+Wire Wire Line
+	5350 2600 3600 2600
+Wire Wire Line
+	5350 2700 3600 2700
+Wire Wire Line
+	5350 2800 3600 2800
+Wire Wire Line
+	4000 2900 3600 2900
+Wire Wire Line
+	6250 7050 6300 7050
+Wire Wire Line
+	6300 7050 6300 7400
+Wire Wire Line
+	6250 6900 6350 6900
+Wire Wire Line
+	6350 6900 6350 7450
+Wire Wire Line
+	6250 6750 6400 6750
+Wire Wire Line
+	6400 6750 6400 7500
+Wire Wire Line
+	4050 3000 4050 4250
+Wire Wire Line
+	4050 3000 3600 3000
+$Comp
+L Comparator:LM393 U?
+U 1 1 61D4F4F8
+P 9400 2150
+F 0 "U?" H 9400 2517 50  0000 C CNN
+F 1 "LM393_FrontRight" H 9400 2426 50  0000 C CNN
+F 2 "" H 9400 2150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393.pdf" H 9400 2150 50  0001 C CNN
+	1    9400 2150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 3200 4700 3400
+Wire Wire Line
+	4700 3400 9050 3400
+Wire Wire Line
+	3600 3200 4700 3200
+Wire Wire Line
+	2000 5200 2200 5200
+Wire Wire Line
+	2000 5200 2000 6350
+Wire Wire Line
+	2050 6300 2050 5300
+Wire Wire Line
+	2050 5300 2200 5300
+Wire Wire Line
+	4650 3450 4650 3300
+Wire Wire Line
+	3600 3300 4650 3300
+Wire Wire Line
+	1350 3900 1350 7050
+Wire Wire Line
+	1150 2100 1150 7500
+Wire Wire Line
+	1350 3900 2200 3900
+Wire Wire Line
+	1300 3800 2200 3800
+Wire Wire Line
+	1600 4600 2200 4600
+Wire Wire Line
+	1650 4700 2200 4700
+Wire Wire Line
+	1700 4800 2200 4800
+Wire Wire Line
+	1750 4900 2200 4900
+Wire Wire Line
+	1750 6550 3750 6550
+Wire Wire Line
+	1700 6600 3800 6600
+Wire Wire Line
+	1650 6650 3850 6650
+Wire Wire Line
+	1600 6700 3900 6700
+Wire Wire Line
+	1150 2100 2200 2100
+Wire Wire Line
+	1250 2000 2200 2000
+Wire Wire Line
+	1200 1900 2200 1900
+Wire Wire Line
+	1750 4900 1750 6550
+Wire Wire Line
+	1700 4800 1700 6600
+Wire Wire Line
+	1650 4700 1650 6650
+Wire Wire Line
+	1600 4600 1600 6700
+Wire Wire Line
+	4250 6300 4250 5400
+Wire Wire Line
+	2050 6300 4250 6300
+Wire Wire Line
+	4300 6350 4300 5450
+Wire Wire Line
+	4300 5450 9050 5450
+Wire Wire Line
+	4300 6350 2000 6350
+Wire Wire Line
+	4000 4750 4000 2900
+Wire Wire Line
+	1300 3800 1300 7200
+$Comp
+L SparkFun-Boards:ARDUINO_MEGA_R3FULL B?
+U 1 1 61D49CD7
+P 2900 3800
+F 0 "B?" H 2900 6160 45  0000 C CNN
+F 1 "ARDUINO_MEGA_R3FULL" H 2900 6076 45  0000 C CNN
+F 2 "ARDUINO_MEGA" H 2900 5950 20  0001 C CNN
+F 3 "" H 2900 3800 50  0001 C CNN
+F 4 "XXX-00000" H 2900 5981 60  0000 C CNN "Field4"
+	1    2900 3800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9100 3450 9100 2900
+Wire Wire Line
+	9100 3450 4650 3450
+Wire Wire Line
+	9050 3400 9050 2150
+Wire Wire Line
+	9050 2150 9100 2150
+$Comp
+L Comparator:LM393 U?
+U 1 1 61D53C10
+P 9400 2900
+F 0 "U?" H 9400 3267 50  0000 C CNN
+F 1 "LM393_FrontLeft" H 9400 3176 50  0000 C CNN
+F 2 "" H 9400 2900 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393.pdf" H 9400 2900 50  0001 C CNN
+	1    9400 2900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 1800 3600 1450
+Wire Wire Line
+	3600 1450 5950 1450
+Wire Wire Line
+	10550 1450 10550 2250
+Wire Wire Line
+	9700 3000 10550 3000
+Connection ~ 10550 3000
+Wire Wire Line
+	10550 3000 10550 3600
+Wire Wire Line
+	9700 2250 10550 2250
+Connection ~ 10550 2250
+Wire Wire Line
+	10550 2250 10550 3000
+Wire Wire Line
+	5950 3600 10550 3600
+Wire Wire Line
+	5950 2050 5950 1450
+Connection ~ 5950 1450
+Wire Wire Line
+	5950 1450 10550 1450
+Connection ~ 10550 3600
+Wire Wire Line
+	9700 2050 10450 2050
+Connection ~ 10450 2050
+Wire Wire Line
+	10450 2050 10450 2800
+Wire Wire Line
+	9700 2800 10450 2800
+Connection ~ 10450 2800
+Wire Wire Line
+	10450 2800 10450 3550
+Wire Wire Line
+	5850 3550 10450 3550
+Connection ~ 10450 3550
+Wire Wire Line
+	4750 6900 4650 6900
+Wire Wire Line
+	4700 5800 10550 5800
+Wire Wire Line
+	5850 1500 10450 1500
+Wire Wire Line
+	6050 3650 10800 3650
+Wire Wire Line
+	10800 1400 6050 1400
+Connection ~ 10800 3650
+Connection ~ 10450 4750
+Connection ~ 10450 4050
+Wire Wire Line
+	10450 3550 10450 4050
+Wire Wire Line
+	10550 3600 10550 4250
+Connection ~ 10550 4250
+Connection ~ 10550 4950
+Wire Wire Line
+	10550 4950 10550 5800
+Wire Wire Line
+	10550 4250 10550 4950
+Wire Wire Line
+	10450 4750 10450 5700
+Wire Wire Line
+	10450 4050 10450 4750
+Wire Wire Line
+	4250 5400 9100 5400
+Wire Wire Line
+	3900 4350 3900 6700
+Wire Wire Line
+	3850 4450 3850 6650
+Wire Wire Line
+	3800 4550 3800 6600
+Wire Wire Line
+	3750 4650 3750 6550
+Wire Wire Line
+	6050 4000 6050 3650
+Wire Wire Line
+	5950 3600 5950 4000
+Wire Wire Line
+	9700 4750 10450 4750
+Wire Wire Line
+	9700 4050 10450 4050
+Wire Wire Line
+	5850 3550 5850 4000
+Wire Wire Line
+	9700 4250 10550 4250
+Wire Wire Line
+	9700 4950 10550 4950
+Wire Wire Line
+	9050 4150 9100 4150
+Wire Wire Line
+	9050 5450 9050 4150
+Wire Wire Line
+	9100 5400 9100 4850
+Wire Wire Line
+	4050 4250 5350 4250
+Wire Wire Line
+	5350 4350 3900 4350
+Wire Wire Line
+	3850 4450 5350 4450
+Wire Wire Line
+	3800 4550 5350 4550
+Wire Wire Line
+	3750 4650 5350 4650
+Wire Wire Line
+	5350 4750 4000 4750
+$Comp
+L AA_Custom_Components:L298N_BREAKOUT U?
+U 1 1 61D51A26
+P 5950 4500
+F 0 "U?" H 5950 4075 50  0000 C CNN
+F 1 "L298N_BREAKOUT_Back" H 5950 3984 50  0000 C CNN
+F 2 "" H 6000 5050 50  0001 L CNN
+F 3 "" H 6100 4750 50  0001 C CNN
+	1    5950 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 4400 6550 4400
+$Comp
+L Motor:Motor_DC M?
+U 1 1 61D4FEA0
+P 7950 4100
+F 0 "M?" H 8108 4096 50  0000 L CNN
+F 1 "Motor_DC_BackLeft" H 8108 4005 50  0000 L CNN
+F 2 "" H 7950 4010 50  0001 C CNN
+F 3 "~" H 7950 4010 50  0001 C CNN
+	1    7950 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Motor:Motor_DC M?
+U 1 1 61D5077A
+P 7950 4800
+F 0 "M?" H 8108 4796 50  0000 L CNN
+F 1 "Motor_DC_BackRight" H 8108 4705 50  0000 L CNN
+F 2 "" H 7950 4710 50  0001 C CNN
+F 3 "~" H 7950 4710 50  0001 C CNN
+	1    7950 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 3900 6550 3900
+Wire Wire Line
+	7950 4600 6550 4600
+Wire Wire Line
+	6550 5100 7950 5100
+Wire Wire Line
+	6550 4700 6550 5100
+Wire Wire Line
+	6550 3900 6550 4300
+$Comp
+L Comparator:LM393 U?
+U 1 1 61D50774
+P 9400 4850
+F 0 "U?" H 9400 5217 50  0000 C CNN
+F 1 "LM393_BackRight" H 9400 5126 50  0000 C CNN
+F 2 "" H 9400 4850 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393.pdf" H 9400 4850 50  0001 C CNN
+	1    9400 4850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Comparator:LM393 U?
+U 1 1 61D4FE9A
+P 9400 4150
+F 0 "U?" H 9400 4517 50  0000 C CNN
+F 1 "LM393_BackLeft" H 9400 4426 50  0000 C CNN
+F 2 "" H 9400 4150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393.pdf" H 9400 4150 50  0001 C CNN
+	1    9400 4150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 1500 5850 2050
+Wire Wire Line
+	10450 1500 10450 2050
+Wire Wire Line
+	6050 1400 6050 2050
+Wire Wire Line
+	10800 1400 10800 3650
+Text Notes 1250 1250 0    276  Italic 55
+OmniBot
+$Comp
+L power:+9V #PWR?
+U 1 1 61D82457
+P 3450 6150
+F 0 "#PWR?" H 3450 6000 50  0001 C CNN
+F 1 "+9V" H 3465 6323 50  0000 C CNN
+F 2 "" H 3450 6150 50  0001 C CNN
+F 3 "" H 3450 6150 50  0001 C CNN
+	1    3450 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 5800 3600 6150
+Wire Wire Line
+	3600 6150 3450 6150
+Wire Wire Line
+	3600 5700 4650 5700
+Wire Wire Line
+	4700 5800 4700 6750
+Wire Wire Line
+	4700 6750 4750 6750
+Connection ~ 4650 5700
+Wire Wire Line
+	4650 5700 10450 5700
+Wire Wire Line
+	4650 5700 4650 6900
+Wire Wire Line
+	1150 7500 6400 7500
+Wire Wire Line
+	1200 7450 6350 7450
+Wire Wire Line
+	1200 1900 1200 7450
+Wire Wire Line
+	1250 7400 6300 7400
+Wire Wire Line
+	1250 2000 1250 7400
+Wire Wire Line
+	1300 7200 4750 7200
+Wire Wire Line
+	1350 7050 4750 7050
+$Comp
+L power:+6V #PWR?
+U 1 1 61E06480
+P 10450 6150
+F 0 "#PWR?" H 10450 6000 50  0001 C CNN
+F 1 "+6V" H 10465 6323 50  0000 C CNN
+F 2 "" H 10450 6150 50  0001 C CNN
+F 3 "" H 10450 6150 50  0001 C CNN
+	1    10450 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10450 6150 10800 6150
+Wire Wire Line
+	10800 3650 10800 6150
+$EndSCHEMATC

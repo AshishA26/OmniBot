@@ -1,0 +1,601 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "OmniBot"
+Date "2022-01-06"
+Rev "1"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 "By: Ashish Agrahari"
+$EndDescr
+$Comp
+L myelin-kicad:nRF24L01+ U?
+U 1 1 61D4F1B6
+P 7250 6000
+F 0 "U?" H 7250 6515 50  0000 C CNN
+F 1 "nRF24L01+_Receiver" H 7250 6424 50  0000 C CNN
+F 2 "MODULE" H 7250 6100 50  0001 C CNN
+F 3 "DOCUMENTATION" H 7250 5950 50  0001 C CNN
+	1    7250 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 1450 6600 1850
+Wire Wire Line
+	6600 2250 6600 2650
+Wire Wire Line
+	6600 2650 7000 2650
+$Comp
+L Motor:Motor_DC M
+U 1 1 61D8D396
+P 7000 2350
+F 0 "M" H 7158 2346 50  0000 L CNN
+F 1 "Motor_DC_FrontLeft" H 7158 2255 50  0000 L CNN
+F 2 "" H 7000 2260 50  0001 C CNN
+F 3 "~" H 7000 2260 50  0001 C CNN
+	1    7000 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Motor:Motor_DC M
+U 1 1 61D8D39C
+P 7000 1650
+F 0 "M" H 7158 1646 50  0000 L CNN
+F 1 "Motor_DC_FrontRight" H 7158 1555 50  0000 L CNN
+F 2 "" H 7000 1560 50  0001 C CNN
+F 3 "~" H 7000 1560 50  0001 C CNN
+	1    7000 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L AA_Custom_Components:L298N_BREAKOUT U?
+U 1 1 61D8D3A3
+P 6000 2050
+F 0 "U?" H 6000 1625 50  0000 C CNN
+F 1 "L298N_BREAKOUT_Front" H 6000 1534 50  0000 C CNN
+F 2 "" H 6050 2600 50  0001 L CNN
+F 3 "" H 6150 2300 50  0001 C CNN
+	1    6000 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Comparator:LM393 U?
+U 1 1 61D4F4F8
+P 9250 1650
+F 0 "U?" H 9250 2017 50  0000 C CNN
+F 1 "LM393_FrontRight" H 9250 1926 50  0000 C CNN
+F 2 "" H 9250 1650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393.pdf" H 9250 1650 50  0001 C CNN
+	1    9250 1650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Comparator:LM393 U?
+U 1 1 61D53C10
+P 9250 2400
+F 0 "U?" H 9250 2767 50  0000 C CNN
+F 1 "LM393_FrontLeft" H 9250 2676 50  0000 C CNN
+F 2 "" H 9250 2400 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393.pdf" H 9250 2400 50  0001 C CNN
+	1    9250 2400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L AA_Custom_Components:L298N_BREAKOUT U?
+U 1 1 61D51A26
+P 6000 4000
+F 0 "U?" H 6000 3575 50  0000 C CNN
+F 1 "L298N_BREAKOUT_Back" H 6000 3484 50  0000 C CNN
+F 2 "" H 6050 4550 50  0001 L CNN
+F 3 "" H 6150 4250 50  0001 C CNN
+	1    6000 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Motor:Motor_DC M
+U 1 1 61D4FEA0
+P 7000 3600
+F 0 "M" H 7158 3596 50  0000 L CNN
+F 1 "Motor_DC_BackLeft" H 7158 3505 50  0000 L CNN
+F 2 "" H 7000 3510 50  0001 C CNN
+F 3 "~" H 7000 3510 50  0001 C CNN
+	1    7000 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 4600 7000 4600
+Wire Wire Line
+	6600 4200 6600 4600
+Wire Wire Line
+	6600 3400 6600 3800
+$Comp
+L Comparator:LM393 U?
+U 1 1 61D50774
+P 9250 4350
+F 0 "U?" H 9250 4717 50  0000 C CNN
+F 1 "LM393_BackRight" H 9250 4626 50  0000 C CNN
+F 2 "" H 9250 4350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393.pdf" H 9250 4350 50  0001 C CNN
+	1    9250 4350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Comparator:LM393 U?
+U 1 1 61D4FE9A
+P 9250 3650
+F 0 "U?" H 9250 4017 50  0000 C CNN
+F 1 "LM393_BackLeft" H 9250 3926 50  0000 C CNN
+F 2 "" H 9250 3650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393.pdf" H 9250 3650 50  0001 C CNN
+	1    9250 3650
+	-1   0    0    -1  
+$EndComp
+Text Notes 850  1250 0    276  Italic 55
+OmniBot
+$Comp
+L power:+9V #PWR?
+U 1 1 61D82457
+P 3500 6600
+F 0 "#PWR?" H 3500 6450 50  0001 C CNN
+F 1 "+9V" H 3515 6773 50  0000 C CNN
+F 2 "" H 3500 6600 50  0001 C CNN
+F 3 "" H 3500 6600 50  0001 C CNN
+	1    3500 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 61D8AD90
+P 3500 6100
+F 0 "#PWR?" H 3500 5950 50  0001 C CNN
+F 1 "+5V" H 3515 6273 50  0000 C CNN
+F 2 "" H 3500 6100 50  0001 C CNN
+F 3 "" H 3500 6100 50  0001 C CNN
+	1    3500 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 6100 3500 6150
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61DA884B
+P 6200 5350
+F 0 "#GND?" H 6250 5300 45  0001 L BNN
+F 1 "GND2" H 6200 5120 45  0000 C CNN
+F 2 "" H 6200 5025 60  0001 C CNN
+F 3 "" H 6200 5250 60  0001 C CNN
+	1    6200 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 61DB9F8E
+P 6200 5950
+F 0 "#PWR?" H 6200 5800 50  0001 C CNN
+F 1 "+5V" H 6215 6123 50  0000 C CNN
+F 2 "" H 6200 5950 50  0001 C CNN
+F 3 "" H 6200 5950 50  0001 C CNN
+	1    6200 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 5950 6500 5950
+$Comp
+L power:+5V #PWR?
+U 1 1 61E01FBD
+P 9700 4250
+F 0 "#PWR?" H 9700 4100 50  0001 C CNN
+F 1 "+5V" H 9715 4423 50  0000 C CNN
+F 2 "" H 9700 4250 50  0001 C CNN
+F 3 "" H 9700 4250 50  0001 C CNN
+	1    9700 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E01FC3
+P 9700 4450
+F 0 "#GND?" H 9750 4400 45  0001 L BNN
+F 1 "GND2" H 9700 4220 45  0000 C CNN
+F 2 "" H 9700 4125 60  0001 C CNN
+F 3 "" H 9700 4350 60  0001 C CNN
+	1    9700 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 4450 9550 4450
+Wire Wire Line
+	9550 4250 9700 4250
+$Comp
+L power:+5V #PWR?
+U 1 1 61E1E42E
+P 9700 3550
+F 0 "#PWR?" H 9700 3400 50  0001 C CNN
+F 1 "+5V" H 9715 3723 50  0000 C CNN
+F 2 "" H 9700 3550 50  0001 C CNN
+F 3 "" H 9700 3550 50  0001 C CNN
+	1    9700 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E1E434
+P 9700 3750
+F 0 "#GND?" H 9750 3700 45  0001 L BNN
+F 1 "GND2" H 9700 3520 45  0000 C CNN
+F 2 "" H 9700 3425 60  0001 C CNN
+F 3 "" H 9700 3650 60  0001 C CNN
+	1    9700 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 3750 9550 3750
+Wire Wire Line
+	9550 3550 9700 3550
+$Comp
+L power:+5V #PWR?
+U 1 1 61E228A0
+P 9700 2300
+F 0 "#PWR?" H 9700 2150 50  0001 C CNN
+F 1 "+5V" H 9715 2473 50  0000 C CNN
+F 2 "" H 9700 2300 50  0001 C CNN
+F 3 "" H 9700 2300 50  0001 C CNN
+	1    9700 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E228A6
+P 9700 2500
+F 0 "#GND?" H 9750 2450 45  0001 L BNN
+F 1 "GND2" H 9700 2270 45  0000 C CNN
+F 2 "" H 9700 2175 60  0001 C CNN
+F 3 "" H 9700 2400 60  0001 C CNN
+	1    9700 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 2500 9550 2500
+Wire Wire Line
+	9550 2300 9700 2300
+$Comp
+L power:+5V #PWR?
+U 1 1 61E26AB0
+P 9700 1550
+F 0 "#PWR?" H 9700 1400 50  0001 C CNN
+F 1 "+5V" H 9715 1723 50  0000 C CNN
+F 2 "" H 9700 1550 50  0001 C CNN
+F 3 "" H 9700 1550 50  0001 C CNN
+	1    9700 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E26AB6
+P 9700 1750
+F 0 "#GND?" H 9750 1700 45  0001 L BNN
+F 1 "GND2" H 9700 1520 45  0000 C CNN
+F 2 "" H 9700 1425 60  0001 C CNN
+F 3 "" H 9700 1650 60  0001 C CNN
+	1    9700 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 1750 9550 1750
+Wire Wire Line
+	9550 1550 9700 1550
+$Comp
+L power:+5V #PWR?
+U 1 1 61E2BBCE
+P 6000 3350
+F 0 "#PWR?" H 6000 3200 50  0001 C CNN
+F 1 "+5V" H 6015 3523 50  0000 C CNN
+F 2 "" H 6000 3350 50  0001 C CNN
+F 3 "" H 6000 3350 50  0001 C CNN
+	1    6000 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E2BBD4
+P 5650 3250
+F 0 "#GND?" H 5700 3200 45  0001 L BNN
+F 1 "GND2" H 5650 3020 45  0000 C CNN
+F 2 "" H 5650 2925 60  0001 C CNN
+F 3 "" H 5650 3150 60  0001 C CNN
+	1    5650 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+6V #PWR?
+U 1 1 61E58988
+P 6250 3350
+F 0 "#PWR?" H 6250 3200 50  0001 C CNN
+F 1 "+6V" H 6265 3523 50  0000 C CNN
+F 2 "" H 6250 3350 50  0001 C CNN
+F 3 "" H 6250 3350 50  0001 C CNN
+	1    6250 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 3500 5900 3250
+Wire Wire Line
+	5900 3250 5650 3250
+Wire Wire Line
+	6000 3350 6000 3500
+Wire Wire Line
+	6100 3500 6250 3500
+Wire Wire Line
+	6250 3500 6250 3350
+$Comp
+L power:+5V #PWR?
+U 1 1 61E95F75
+P 6000 1400
+F 0 "#PWR?" H 6000 1250 50  0001 C CNN
+F 1 "+5V" H 6015 1573 50  0000 C CNN
+F 2 "" H 6000 1400 50  0001 C CNN
+F 3 "" H 6000 1400 50  0001 C CNN
+	1    6000 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E95F7B
+P 5650 1300
+F 0 "#GND?" H 5700 1250 45  0001 L BNN
+F 1 "GND2" H 5650 1070 45  0000 C CNN
+F 2 "" H 5650 975 60  0001 C CNN
+F 3 "" H 5650 1200 60  0001 C CNN
+	1    5650 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+6V #PWR?
+U 1 1 61E95F81
+P 6250 1400
+F 0 "#PWR?" H 6250 1250 50  0001 C CNN
+F 1 "+6V" H 6265 1573 50  0000 C CNN
+F 2 "" H 6250 1400 50  0001 C CNN
+F 3 "" H 6250 1400 50  0001 C CNN
+	1    6250 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 1550 5900 1300
+Wire Wire Line
+	5900 1300 5650 1300
+Wire Wire Line
+	6000 1400 6000 1550
+Wire Wire Line
+	6250 1550 6250 1400
+Wire Wire Line
+	6100 1550 6250 1550
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61EA1A16
+P 3550 2250
+F 0 "#GND?" H 3600 2200 45  0001 L BNN
+F 1 "GND2" H 3550 2020 45  0000 C CNN
+F 2 "" H 3550 1925 60  0001 C CNN
+F 3 "" H 3550 2150 60  0001 C CNN
+	1    3550 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 2250 3250 2250
+Text GLabel 8950 1650 0    50   Output ~ 0
+ENC_FR
+Text GLabel 3400 3650 2    50   Input ~ 0
+ENC_FR
+Text GLabel 8950 2400 0    50   Output ~ 0
+ENC_FL
+Text GLabel 3400 3750 2    50   Input ~ 0
+ENC_FL
+Text GLabel 8950 3650 0    50   Output ~ 0
+ENC_BL
+Text GLabel 1700 5650 0    50   Input ~ 0
+ENC_BL
+$Comp
+L SparkFun-Boards:ARDUINO_MEGA_R3FULL B?
+U 1 1 61D49CD7
+P 2550 4250
+F 0 "B?" H 2550 6610 45  0000 C CNN
+F 1 "ARDUINO_MEGA_R3FULL" H 2550 6526 45  0000 C CNN
+F 2 "ARDUINO_MEGA" H 2550 6400 20  0001 C CNN
+F 3 "" H 2550 4250 50  0001 C CNN
+	1    2550 4250
+	-1   0    0    1   
+$EndComp
+Text GLabel 1700 5750 0    50   Input ~ 0
+ENC_BR
+Text GLabel 8950 4350 0    50   Output ~ 0
+ENC_BR
+Text GLabel 5400 3850 0    50   Input ~ 0
+IN1_Back
+Text GLabel 1700 5050 0    50   Output ~ 0
+IN1_Back
+Text GLabel 1700 5150 0    50   Output ~ 0
+IN2_Back
+Text GLabel 1700 5250 0    50   Output ~ 0
+IN3_Back
+Text GLabel 1700 5350 0    50   Output ~ 0
+IN4_Back
+Text GLabel 5400 3950 0    50   Input ~ 0
+IN2_Back
+Text GLabel 5400 4050 0    50   Input ~ 0
+IN3_Back
+Text GLabel 5400 4150 0    50   Input ~ 0
+IN4_Back
+Text GLabel 5400 3750 0    50   Input ~ 0
+ENA_Back
+Text GLabel 5400 4250 0    50   Input ~ 0
+ENB_Back
+Text GLabel 3400 3350 2    50   Output ~ 0
+ENB_Back
+Text GLabel 3400 3450 2    50   Output ~ 0
+ENA_Back
+Text GLabel 5400 1900 0    50   Input ~ 0
+IN1_Front
+Text GLabel 5400 2000 0    50   Input ~ 0
+IN2_Front
+Text GLabel 5400 2100 0    50   Input ~ 0
+IN3_Front
+Text GLabel 5400 2200 0    50   Input ~ 0
+IN4_Front
+Text GLabel 5400 1800 0    50   Input ~ 0
+ENA_Front
+Text GLabel 5400 2300 0    50   Input ~ 0
+ENB_Front
+Text GLabel 3400 2850 2    50   Output ~ 0
+IN1_Front
+Text GLabel 3400 2950 2    50   Output ~ 0
+IN2_Front
+Text GLabel 3400 3050 2    50   Output ~ 0
+IN3_Front
+Text GLabel 3400 3150 2    50   Output ~ 0
+IN4_Front
+Text GLabel 3400 2750 2    50   Output ~ 0
+ENA_Front
+Text GLabel 3400 3250 2    50   Output ~ 0
+ENB_Front
+Text GLabel 6500 6100 0    50   Input ~ 0
+CE
+Text GLabel 6500 6250 0    50   Input ~ 0
+CSN
+Wire Wire Line
+	6500 5800 6500 5350
+Wire Wire Line
+	6500 5350 6200 5350
+Text GLabel 1700 4250 0    50   Output ~ 0
+CSN
+Text GLabel 1700 4350 0    50   Output ~ 0
+CE
+Text GLabel 8000 5800 2    50   Output ~ 0
+SCK
+Text GLabel 1700 2550 0    50   Input ~ 0
+SCK
+Text GLabel 8000 5950 2    50   Output ~ 0
+MOSI
+Text GLabel 8000 6100 2    50   Input ~ 0
+MISO
+Text GLabel 1700 2450 0    50   Output ~ 0
+MISO
+Text GLabel 1700 2350 0    50   Input ~ 0
+MOSI
+Wire Wire Line
+	7000 2150 6600 2150
+Wire Wire Line
+	7000 1450 6600 1450
+Wire Wire Line
+	7000 1950 6600 1950
+Wire Wire Line
+	7000 3400 6600 3400
+Wire Wire Line
+	7000 3900 6600 3900
+$Comp
+L Motor:Motor_DC M
+U 1 1 61D5077A
+P 7000 4300
+F 0 "M" H 7158 4296 50  0000 L CNN
+F 1 "Motor_DC_BackRight" H 7158 4205 50  0000 L CNN
+F 2 "" H 7000 4210 50  0001 C CNN
+F 3 "~" H 7000 4210 50  0001 C CNN
+	1    7000 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 4100 6600 4100
+Wire Wire Line
+	3400 2750 3250 2750
+Wire Wire Line
+	3400 2850 3250 2850
+Wire Wire Line
+	3400 2950 3250 2950
+Wire Wire Line
+	3250 3050 3400 3050
+Wire Wire Line
+	3250 3150 3400 3150
+Wire Wire Line
+	3250 3250 3400 3250
+Wire Wire Line
+	3250 3350 3400 3350
+Wire Wire Line
+	3250 3450 3400 3450
+Wire Wire Line
+	3250 3650 3400 3650
+Wire Wire Line
+	3250 3750 3400 3750
+Wire Wire Line
+	1700 5050 1850 5050
+Wire Wire Line
+	1700 5150 1850 5150
+Wire Wire Line
+	1700 5250 1850 5250
+Wire Wire Line
+	1700 5350 1850 5350
+Wire Wire Line
+	1700 5650 1850 5650
+Wire Wire Line
+	1700 5750 1850 5750
+Wire Wire Line
+	1700 2350 1850 2350
+Wire Wire Line
+	1700 2450 1850 2450
+Wire Wire Line
+	1700 2550 1850 2550
+Wire Wire Line
+	1700 4250 1850 4250
+Wire Wire Line
+	1700 4350 1850 4350
+Wire Wire Line
+	3250 6150 3500 6150
+Wire Wire Line
+	3250 6250 3250 6600
+Wire Wire Line
+	3250 6600 3500 6600
+Wire Notes Line
+	1000 6950 4150 6950
+Wire Notes Line
+	4150 6950 4150 1650
+Wire Notes Line
+	4150 1650 1000 1650
+Wire Notes Line
+	1000 1650 1000 6950
+Wire Notes Line
+	4650 4850 8200 4850
+Wire Notes Line
+	8200 700  4650 700 
+Wire Notes Line
+	8400 4950 10150 4950
+Wire Notes Line
+	10150 4950 10150 700 
+Wire Notes Line
+	10150 700  8400 700 
+Wire Notes Line
+	8400 700  8400 4950
+Wire Notes Line
+	8200 700  8200 4850
+Wire Notes Line
+	4650 700  4650 4850
+Wire Notes Line
+	8600 5050 8600 6550
+Wire Notes Line
+	8600 6550 5000 6550
+Wire Notes Line
+	5000 6550 5000 5050
+Wire Notes Line
+	5000 5050 8600 5050
+Text Notes 1850 1900 2    118  ~ 0
+ARDUINO
+Text Notes 7000 1000 2    118  ~ 0
+MOTORS, MOTOR DRIVERS
+Text Notes 9450 1000 2    118  ~ 0
+ENCODERS
+Text Notes 7150 5300 2    118  ~ 0
+NRF24 RADIO RECEIVER
+$EndSCHEMATC
