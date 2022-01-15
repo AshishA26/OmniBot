@@ -5,7 +5,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "OmniBot Joystick"
-Date "2022-01-06"
+Date "2022-01-15"
 Rev "1"
 Comp ""
 Comment1 ""
@@ -297,239 +297,55 @@ Wire Wire Line
 $Comp
 L AA_Custom_Components:BUTTON_BREAKOUT j
 U 1 1 61DC9678
-P 8650 2350
-F 0 "j" H 8525 2717 50  0001 C CNN
-F 1 "BUTTON_BREAKOUT_1" H 8525 2625 50  0000 C CNN
-F 2 "" H 8700 2100 50  0001 L CIN
-F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 8650 2350 50  0001 C CNN
-	1    8650 2350
+P 8550 1950
+F 0 "j" H 8425 2317 50  0001 C CNN
+F 1 "BUTTON_BREAKOUT_1" H 8425 2225 50  0000 C CNN
+F 2 "" H 8600 1700 50  0001 L CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 8550 1950 50  0001 C CNN
+	1    8550 1950
 	1    0    0    -1  
 $EndComp
-$Comp
-L SparkFun-PowerSymbols:GND2 #GND?
-U 1 1 61DCB913
-P 7250 2000
-F 0 "#GND?" H 7300 1950 45  0001 L BNN
-F 1 "GND2" H 7250 1770 45  0000 C CNN
-F 2 "" H 7250 1675 60  0001 C CNN
-F 3 "" H 7250 1900 60  0001 C CNN
-	1    7250 2000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7250 2000 7600 2000
-$Comp
-L power:+5V #PWR?
-U 1 1 61DCB91A
-P 7850 2300
-F 0 "#PWR?" H 7850 2150 50  0001 C CNN
-F 1 "+5V" H 7865 2473 50  0000 C CNN
-F 2 "" H 7850 2300 50  0001 C CNN
-F 3 "" H 7850 2300 50  0001 C CNN
-	1    7850 2300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7850 2450 7850 2300
-Wire Wire Line
-	7850 2450 8150 2450
-Wire Wire Line
-	8000 2000 8000 2250
-Wire Wire Line
-	8000 2250 8150 2250
-$Comp
-L SparkFun-Resistors:220KOHM-0603-1_10W-1% R
-U 1 1 61DCD139
-P 7800 2000
-F 0 "R" H 7800 2194 45  0001 C CNN
-F 1 "220 OHM RESISTOR" H 7800 2110 45  0000 C CNN
-F 2 "0603" H 7800 2150 20  0001 C CNN
-F 3 "" H 7800 2000 60  0001 C CNN
-F 4 " " H 7800 2121 60  0001 C CNN "Field4"
-	1    7800 2000
-	1    0    0    -1  
-$EndComp
-Text GLabel 9050 2250 2    50   Output ~ 0
+Text GLabel 7900 1850 0    50   Output ~ 0
 BUTTON_1
-Wire Wire Line
-	8900 2250 9050 2250
 $Comp
 L AA_Custom_Components:BUTTON_BREAKOUT j?
 U 1 1 61DDDFFF
-P 8650 3000
-F 0 "j?" H 8525 3367 50  0001 C CNN
-F 1 "BUTTON_BREAKOUT_2" H 8525 3275 50  0000 C CNN
-F 2 "" H 8700 2750 50  0001 L CIN
-F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 8650 3000 50  0001 C CNN
-	1    8650 3000
+P 8550 2600
+F 0 "j?" H 8425 2967 50  0001 C CNN
+F 1 "BUTTON_BREAKOUT_2" H 8425 2875 50  0000 C CNN
+F 2 "" H 8600 2350 50  0001 L CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 8550 2600 50  0001 C CNN
+	1    8550 2600
 	1    0    0    -1  
 $EndComp
-$Comp
-L SparkFun-PowerSymbols:GND2 #GND?
-U 1 1 61DDE005
-P 7250 2650
-F 0 "#GND?" H 7300 2600 45  0001 L BNN
-F 1 "GND2" H 7250 2420 45  0000 C CNN
-F 2 "" H 7250 2325 60  0001 C CNN
-F 3 "" H 7250 2550 60  0001 C CNN
-	1    7250 2650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7250 2650 7600 2650
-$Comp
-L power:+5V #PWR?
-U 1 1 61DDE00C
-P 7850 2950
-F 0 "#PWR?" H 7850 2800 50  0001 C CNN
-F 1 "+5V" H 7865 3123 50  0000 C CNN
-F 2 "" H 7850 2950 50  0001 C CNN
-F 3 "" H 7850 2950 50  0001 C CNN
-	1    7850 2950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7850 3100 7850 2950
-Wire Wire Line
-	7850 3100 8150 3100
-Wire Wire Line
-	8000 2650 8000 2900
-Wire Wire Line
-	8000 2900 8150 2900
-$Comp
-L SparkFun-Resistors:220KOHM-0603-1_10W-1% R?
-U 1 1 61DDE017
-P 7800 2650
-F 0 "R?" H 7800 2844 45  0001 C CNN
-F 1 "220 OHM RESISTOR" H 7800 2760 45  0000 C CNN
-F 2 "0603" H 7800 2800 20  0001 C CNN
-F 3 "" H 7800 2650 60  0001 C CNN
-F 4 " " H 7800 2771 60  0001 C CNN "Field4"
-	1    7800 2650
-	1    0    0    -1  
-$EndComp
-Text GLabel 9050 2900 2    50   Output ~ 0
+Text GLabel 7900 2500 0    50   Output ~ 0
 BUTTON_2
-Wire Wire Line
-	8900 2900 9050 2900
 $Comp
 L AA_Custom_Components:BUTTON_BREAKOUT j?
 U 1 1 61DDF914
-P 8650 3700
-F 0 "j?" H 8525 4067 50  0001 C CNN
-F 1 "BUTTON_BREAKOUT_3" H 8525 3975 50  0000 C CNN
-F 2 "" H 8700 3450 50  0001 L CIN
-F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 8650 3700 50  0001 C CNN
-	1    8650 3700
+P 8550 3300
+F 0 "j?" H 8425 3667 50  0001 C CNN
+F 1 "BUTTON_BREAKOUT_3" H 8425 3575 50  0000 C CNN
+F 2 "" H 8600 3050 50  0001 L CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 8550 3300 50  0001 C CNN
+	1    8550 3300
 	1    0    0    -1  
 $EndComp
-$Comp
-L SparkFun-PowerSymbols:GND2 #GND?
-U 1 1 61DDF91A
-P 7250 3350
-F 0 "#GND?" H 7300 3300 45  0001 L BNN
-F 1 "GND2" H 7250 3120 45  0000 C CNN
-F 2 "" H 7250 3025 60  0001 C CNN
-F 3 "" H 7250 3250 60  0001 C CNN
-	1    7250 3350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7250 3350 7600 3350
-$Comp
-L power:+5V #PWR?
-U 1 1 61DDF921
-P 7850 3650
-F 0 "#PWR?" H 7850 3500 50  0001 C CNN
-F 1 "+5V" H 7865 3823 50  0000 C CNN
-F 2 "" H 7850 3650 50  0001 C CNN
-F 3 "" H 7850 3650 50  0001 C CNN
-	1    7850 3650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7850 3800 7850 3650
-Wire Wire Line
-	7850 3800 8150 3800
-Wire Wire Line
-	8000 3350 8000 3600
-Wire Wire Line
-	8000 3600 8150 3600
-$Comp
-L SparkFun-Resistors:220KOHM-0603-1_10W-1% R?
-U 1 1 61DDF92C
-P 7800 3350
-F 0 "R?" H 7800 3544 45  0001 C CNN
-F 1 "220 OHM RESISTOR" H 7800 3460 45  0000 C CNN
-F 2 "0603" H 7800 3500 20  0001 C CNN
-F 3 "" H 7800 3350 60  0001 C CNN
-F 4 " " H 7800 3471 60  0001 C CNN "Field4"
-	1    7800 3350
-	1    0    0    -1  
-$EndComp
-Text GLabel 9050 3600 2    50   Output ~ 0
+Text GLabel 7900 3200 0    50   Output ~ 0
 BUTTON_3
-Wire Wire Line
-	8900 3600 9050 3600
 $Comp
 L AA_Custom_Components:BUTTON_BREAKOUT j?
 U 1 1 61DE507E
-P 8650 4400
-F 0 "j?" H 8525 4767 50  0001 C CNN
-F 1 "BUTTON_BREAKOUT_4" H 8525 4675 50  0000 C CNN
-F 2 "" H 8700 4150 50  0001 L CIN
-F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 8650 4400 50  0001 C CNN
-	1    8650 4400
-	1    0    0    -1  
-$EndComp
-$Comp
-L SparkFun-PowerSymbols:GND2 #GND?
-U 1 1 61DE5084
-P 7250 4050
-F 0 "#GND?" H 7300 4000 45  0001 L BNN
-F 1 "GND2" H 7250 3820 45  0000 C CNN
-F 2 "" H 7250 3725 60  0001 C CNN
-F 3 "" H 7250 3950 60  0001 C CNN
-	1    7250 4050
+P 8550 4000
+F 0 "j?" H 8425 4367 50  0001 C CNN
+F 1 "BUTTON_BREAKOUT_4" H 8425 4275 50  0000 C CNN
+F 2 "" H 8600 3750 50  0001 L CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 8550 4000 50  0001 C CNN
+	1    8550 4000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7250 4050 7600 4050
-$Comp
-L power:+5V #PWR?
-U 1 1 61DE508B
-P 7850 4350
-F 0 "#PWR?" H 7850 4200 50  0001 C CNN
-F 1 "+5V" H 7865 4523 50  0000 C CNN
-F 2 "" H 7850 4350 50  0001 C CNN
-F 3 "" H 7850 4350 50  0001 C CNN
-	1    7850 4350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7850 4500 7850 4350
-Wire Wire Line
-	7850 4500 8150 4500
-Wire Wire Line
-	8000 4050 8000 4300
-Wire Wire Line
-	8000 4300 8150 4300
-$Comp
-L SparkFun-Resistors:220KOHM-0603-1_10W-1% R?
-U 1 1 61DE5096
-P 7800 4050
-F 0 "R?" H 7800 4244 45  0001 C CNN
-F 1 "220 OHM RESISTOR" H 7800 4160 45  0000 C CNN
-F 2 "0603" H 7800 4200 20  0001 C CNN
-F 3 "" H 7800 4050 60  0001 C CNN
-F 4 " " H 7800 4171 60  0001 C CNN "Field4"
-	1    7800 4050
-	1    0    0    -1  
-$EndComp
-Text GLabel 9050 4300 2    50   Output ~ 0
-BUTTON_4
-Wire Wire Line
-	8900 4300 9050 4300
+	7750 4100 8050 4100
 Wire Notes Line
 	4400 4200 6100 4200
 Wire Notes Line
@@ -537,13 +353,9 @@ Wire Notes Line
 Text Notes 5400 1850 2    118  ~ 0
 JOYSTICKS
 Wire Notes Line
-	6750 4850 9650 4850
-Wire Notes Line
-	9650 4850 9650 1300
+	6750 4950 9650 4950
 Wire Notes Line
 	9650 1300 6750 1300
-Wire Notes Line
-	6750 1300 6750 4850
 Text Notes 7700 1600 2    118  ~ 0
 BUTTONS
 Wire Notes Line
@@ -560,4 +372,70 @@ Wire Notes Line
 	1250 2600 1250 6050
 Text Notes 1600 5900 0    59   ~ 0
 Note: On the Arduino Nano, SCK = D13, \nMOSI = D12, and MISO = D11.
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E33A90
+P 7750 4100
+F 0 "#GND?" H 7800 4050 45  0001 L BNN
+F 1 "GND2" H 7750 3870 45  0000 C CNN
+F 2 "" H 7750 3775 60  0001 C CNN
+F 3 "" H 7750 4000 60  0001 C CNN
+	1    7750 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 3400 8050 3400
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E3A52D
+P 7750 3400
+F 0 "#GND?" H 7800 3350 45  0001 L BNN
+F 1 "GND2" H 7750 3170 45  0000 C CNN
+F 2 "" H 7750 3075 60  0001 C CNN
+F 3 "" H 7750 3300 60  0001 C CNN
+	1    7750 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 2700 8050 2700
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E3B3F1
+P 7750 2700
+F 0 "#GND?" H 7800 2650 45  0001 L BNN
+F 1 "GND2" H 7750 2470 45  0000 C CNN
+F 2 "" H 7750 2375 60  0001 C CNN
+F 3 "" H 7750 2600 60  0001 C CNN
+	1    7750 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 2050 8050 2050
+$Comp
+L SparkFun-PowerSymbols:GND2 #GND?
+U 1 1 61E3C2CD
+P 7750 2050
+F 0 "#GND?" H 7800 2000 45  0001 L BNN
+F 1 "GND2" H 7750 1820 45  0000 C CNN
+F 2 "" H 7750 1725 60  0001 C CNN
+F 3 "" H 7750 1950 60  0001 C CNN
+	1    7750 2050
+	1    0    0    -1  
+$EndComp
+Text GLabel 7900 3900 0    50   Output ~ 0
+BUTTON_4
+Wire Wire Line
+	7900 1850 8050 1850
+Wire Wire Line
+	7900 2500 8050 2500
+Wire Wire Line
+	7900 3200 8050 3200
+Wire Wire Line
+	7900 3900 8050 3900
+Text Notes 7100 4900 0    59   ~ 0
+Note: Resistors not needed as Arduino has internal \npullup resistors. Also, it does not matter which set \nof pins used, only matters the pins are beside \neachother.
+Wire Notes Line
+	9650 1300 9650 4950
+Wire Notes Line
+	6750 1300 6750 4950
 $EndSCHEMATC
