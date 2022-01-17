@@ -18,6 +18,10 @@ Schematic for the OmniBot Joystick:
 ## Images
 Rendered pictures of the 3D model I created using parts from [GrabCAD](https://grabcad.com/library) combined with my own models designed for 3D printing. Made in real-world scale and was made using `Solidworks`.
 
+OmniBot:
 ![Pic1](./Images/Pic1.JPG)
 ![Pic2](./Images/Pic2.JPG)
-![Pic3](./Images/Pic3.JPG)
+
+OmniBot Joystick:
+![JoystickPic1](./Images/JoystickPic1.JPG)
+![JoystickPic2](./Images/JoystickPic2.JPG)
