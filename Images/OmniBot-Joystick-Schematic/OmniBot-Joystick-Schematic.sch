@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "OmniBot Joystick"
-Date "2022-01-15"
-Rev "1"
+Date "2022-01-19"
+Rev "2"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -51,27 +51,25 @@ $EndComp
 $Comp
 L SparkFun-PowerSymbols:GND2 #GND?
 U 1 1 61DA884B
-P 2600 6300
-F 0 "#GND?" H 2650 6250 45  0001 L BNN
-F 1 "GND2" H 2600 6070 45  0000 C CNN
-F 2 "" H 2600 5975 60  0001 C CNN
-F 3 "" H 2600 6200 60  0001 C CNN
-	1    2600 6300
+P 1750 6400
+F 0 "#GND?" H 1800 6350 45  0001 L BNN
+F 1 "GND2" H 1750 6170 45  0000 C CNN
+F 2 "" H 1750 6075 60  0001 C CNN
+F 3 "" H 1750 6300 60  0001 C CNN
+	1    1750 6400
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR?
 U 1 1 61DB9F8E
-P 2600 6900
-F 0 "#PWR?" H 2600 6750 50  0001 C CNN
-F 1 "+5V" H 2615 7073 50  0000 C CNN
-F 2 "" H 2600 6900 50  0001 C CNN
-F 3 "" H 2600 6900 50  0001 C CNN
-	1    2600 6900
+P 1750 6900
+F 0 "#PWR?" H 1750 6750 50  0001 C CNN
+F 1 "+5V" H 1765 7073 50  0000 C CNN
+F 2 "" H 1750 6900 50  0001 C CNN
+F 3 "" H 1750 6900 50  0001 C CNN
+	1    1750 6900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2600 6900 2900 6900
 $Comp
 L SparkFun-PowerSymbols:GND2 #GND?
 U 1 1 61EA1A16
@@ -87,10 +85,6 @@ Text GLabel 2900 7050 0    50   Input ~ 0
 CE
 Text GLabel 2900 7200 0    50   Input ~ 0
 CSN
-Wire Wire Line
-	2900 6750 2900 6300
-Wire Wire Line
-	2900 6300 2600 6300
 Text GLabel 2150 3650 0    50   Output ~ 0
 CSN
 Text GLabel 2150 3550 0    50   Output ~ 0
@@ -438,4 +432,32 @@ Wire Notes Line
 	9700 1950 9700 5600
 Wire Notes Line
 	6800 1950 6800 5600
+$Comp
+L SparkFun-Capacitors:47UF-POLAR-EIA3528-10V-10% C?
+U 1 1 61E9012B
+P 2650 6800
+F 0 "C?" H 2778 6792 45  0001 L CNN
+F 1 "47UF CAPACITOR" H 2522 6750 45  0000 R CNN
+F 2 "EIA3528" H 2650 7050 20  0001 C CNN
+F 3 "" H 2650 6800 50  0001 C CNN
+F 4 "CAP-08310" H 2778 6666 60  0001 L CNN "Field4"
+	1    2650 6800
+	1    0    0    1   
+$EndComp
+Connection ~ 2650 6900
+Wire Wire Line
+	2650 6900 2900 6900
+Wire Wire Line
+	2900 6750 2900 6600
+Wire Wire Line
+	2900 6600 2650 6600
+Wire Wire Line
+	2050 6600 2050 6400
+Connection ~ 2650 6600
+Wire Wire Line
+	2650 6600 2050 6600
+Wire Wire Line
+	1750 6400 2050 6400
+Wire Wire Line
+	1750 6900 2650 6900
 $EndSCHEMATC

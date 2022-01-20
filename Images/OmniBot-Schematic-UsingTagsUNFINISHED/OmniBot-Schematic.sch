@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "OmniBot"
-Date "2022-01-06"
-Rev "1"
+Date "2022-01-19"
+Rev "2"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -164,27 +164,25 @@ Wire Wire Line
 $Comp
 L SparkFun-PowerSymbols:GND2 #GND?
 U 1 1 61DA884B
-P 6200 5350
-F 0 "#GND?" H 6250 5300 45  0001 L BNN
-F 1 "GND2" H 6200 5120 45  0000 C CNN
-F 2 "" H 6200 5025 60  0001 C CNN
-F 3 "" H 6200 5250 60  0001 C CNN
-	1    6200 5350
+P 5500 5450
+F 0 "#GND?" H 5550 5400 45  0001 L BNN
+F 1 "GND2" H 5500 5220 45  0000 C CNN
+F 2 "" H 5500 5125 60  0001 C CNN
+F 3 "" H 5500 5350 60  0001 C CNN
+	1    5500 5450
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR?
 U 1 1 61DB9F8E
-P 6200 5950
-F 0 "#PWR?" H 6200 5800 50  0001 C CNN
-F 1 "+5V" H 6215 6123 50  0000 C CNN
-F 2 "" H 6200 5950 50  0001 C CNN
-F 3 "" H 6200 5950 50  0001 C CNN
-	1    6200 5950
+P 5450 5950
+F 0 "#PWR?" H 5450 5800 50  0001 C CNN
+F 1 "+5V" H 5465 6123 50  0000 C CNN
+F 2 "" H 5450 5950 50  0001 C CNN
+F 3 "" H 5450 5950 50  0001 C CNN
+	1    5450 5950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6200 5950 6500 5950
 $Comp
 L power:+5V #PWR?
 U 1 1 61E01FBD
@@ -467,10 +465,6 @@ Text GLabel 6500 6100 0    50   Input ~ 0
 CE
 Text GLabel 6500 6250 0    50   Input ~ 0
 CSN
-Wire Wire Line
-	6500 5800 6500 5350
-Wire Wire Line
-	6500 5350 6200 5350
 Text GLabel 1700 4250 0    50   Output ~ 0
 CSN
 Text GLabel 1700 4350 0    50   Output ~ 0
@@ -598,4 +592,32 @@ Text Notes 9450 1000 2    118  ~ 0
 ENCODERS
 Text Notes 7150 5300 2    118  ~ 0
 NRF24 RADIO RECEIVER
+$Comp
+L SparkFun-Capacitors:47UF-POLAR-EIA3528-10V-10% C?
+U 1 1 61E9038C
+P 6350 5850
+F 0 "C?" H 6478 5842 45  0001 L CNN
+F 1 "47UF CAPACITOR" H 6222 5800 45  0000 R CNN
+F 2 "EIA3528" H 6350 6100 20  0001 C CNN
+F 3 "" H 6350 5850 50  0001 C CNN
+F 4 "CAP-08310" H 6478 5716 60  0001 L CNN "Field4"
+	1    6350 5850
+	1    0    0    1   
+$EndComp
+Connection ~ 6350 5950
+Wire Wire Line
+	6350 5950 6500 5950
+Wire Wire Line
+	6500 5800 6500 5650
+Wire Wire Line
+	6500 5650 6350 5650
+Wire Wire Line
+	6350 5650 5650 5650
+Wire Wire Line
+	5650 5650 5650 5450
+Wire Wire Line
+	5650 5450 5500 5450
+Connection ~ 6350 5650
+Wire Wire Line
+	5450 5950 6350 5950
 $EndSCHEMATC
