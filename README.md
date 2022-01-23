@@ -8,6 +8,9 @@ Programmed in `Platform IO`, models created in `Solidworks`, schematics created 
 - The entire `Platform IO` project is to be uploaded to the OmniBot
 - More coming soon
 
+## Note
+The OmniBot-Joystick is a slightly modified version of my [RC-Joystick](https://github.com/AshishA26/RC-Joystick).
+
 ## Schematics
 Schematic for the OmniBot:
 ![OmniBot Schematic](./Images/OmniBot-Schematic-UsingTags/OmniBot-Schematic.svg)
