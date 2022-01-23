@@ -5,7 +5,7 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 
-RF24 radio(32, 33); // nRF24L01 (CE, CSN)
+RF24 radio(32, 33); // nRF24L01 (CE, CSN), can be any digital pin on the arduino
 const byte address[6] = "00001";
 unsigned long lastReceiveTime = 0;
 unsigned long currentTime = 0;
@@ -428,7 +428,7 @@ void loop()
   }
   else if (data.j2PotY < 100 && data.j2PotX > 160)
   {
-    MoveRightReverse(CMtoSteps(1), 255);
+    MoveLeftForward(CMtoSteps(1), 255);
   }
   else if (data.j2PotY > 160 && data.j2PotX > 160)
   {
@@ -440,13 +440,13 @@ void loop()
   }
   else if (data.j2PotY > 160 && data.j2PotX < 100)
   {
-    MoveLeftForward(CMtoSteps(1), 255);
+    MoveRightReverse(CMtoSteps(1), 255);
   }
-  else if (data.j2PotY < 100)
+  else if (data.j2PotX < 100)
   {
     SpinRight(CMtoSteps(1), 255);
   }
-  else if (data.j2PotY > 150)
+  else if (data.j2PotX > 150)
   {
     SpinLeft(CMtoSteps(1), 255);
   }

@@ -78,5 +78,4 @@ void loop() {
   data.button4 = digitalRead(b4);
   // Send the whole data from the structure to the receiver
   radio.write(&data, sizeof(Data_Package));
-  Serial.println(data.button1);
 }

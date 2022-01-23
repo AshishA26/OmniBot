@@ -356,16 +356,8 @@ Wire Notes Line
 	6200 2500 6200 5100
 Wire Notes Line
 	4500 2500 4500 5100
-Wire Notes Line
-	1400 5450 3900 5450
-Wire Notes Line
-	3900 5450 3900 2000
-Wire Notes Line
-	3900 2000 1400 2000
-Wire Notes Line
-	1400 2000 1400 5450
-Text Notes 1750 5300 0    59   ~ 0
-Note: On the Arduino Nano, SCK = D13, \nMOSI = D12, and MISO = D11.
+Text Notes 1550 5450 0    59   ~ 0
+Note: On the Arduino Nano, SCK = D13, MISO = D12, \nand MOSI = D11. CE and CSN can be any digital pin\non the Arduino. So when changing, the pin \ndefinitions in the code must be changed.
 $Comp
 L SparkFun-PowerSymbols:GND2 #GND?
 U 1 1 61E33A90
@@ -460,4 +452,12 @@ Wire Wire Line
 	1750 6400 2050 6400
 Wire Wire Line
 	1750 6900 2650 6900
+Wire Notes Line
+	4100 2000 4100 5550
+Wire Notes Line
+	1400 2000 1400 5550
+Wire Notes Line
+	1400 5550 4100 5550
+Wire Notes Line
+	1400 2000 4100 2000
 $EndSCHEMATC

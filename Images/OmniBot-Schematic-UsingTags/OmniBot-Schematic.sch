@@ -553,13 +553,9 @@ Wire Wire Line
 Wire Wire Line
 	3250 6600 3500 6600
 Wire Notes Line
-	1000 6950 4150 6950
-Wire Notes Line
-	4150 6950 4150 1650
+	1000 7150 4150 7150
 Wire Notes Line
 	4150 1650 1000 1650
-Wire Notes Line
-	1000 1650 1000 6950
 Wire Notes Line
 	4650 4850 8200 4850
 Wire Notes Line
@@ -620,4 +616,10 @@ Wire Wire Line
 Connection ~ 6350 5650
 Wire Wire Line
 	5450 5950 6350 5950
+Text Notes 1250 7050 0    59   ~ 0
+Note: CE and CSN can be any digital pin on the Arduino. \nSo when changing, the pin definitions in the code must \nbe changed.
+Wire Notes Line
+	4150 1650 4150 7150
+Wire Notes Line
+	1000 1650 1000 7150
 $EndSCHEMATC
