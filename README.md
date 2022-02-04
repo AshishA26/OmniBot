@@ -1,7 +1,11 @@
 # OmniBot
 A remote-controlled robot that has the ability to move in more directions than usually possible using unique mecanum wheels. 
-Controlled using custom-designed Joystick and nRF24L01 module.
+Controlled using a custom-designed Joystick and nRF24L01 module.
 Programmed in `Platform IO`, models created in `Solidworks`, schematics created in `KiCad`.
+
+Some very short demos below (click on each one to visit the full video):
+[![Link to youtube video](./Images/ParallelPark.gif)](https://www.youtube.com/watch?v=i19Mjydu3dY)
+[![Link to youtube video](./Images/DirectionDemo.gif)](https://www.youtube.com/watch?v=ooEIl0JvQ7g)
 
 ## Instructions
 - Upload the OmniBot-Joystick.ino in the `src/OmniBot-Joystick` folder to the joystick
@@ -19,12 +23,21 @@ Schematic for the OmniBot Joystick:
 ![OmniBot Joystick Schematic](./Images/OmniBot-Joystick-Schematic/OmniBot-Joystick-Schematic.svg)
 
 ## Images
-Rendered pictures of the 3D model I created using parts from [GrabCAD](https://grabcad.com/library) combined with my own models designed for 3D printing. Made in real-world scale and was made using `Solidworks`.
 
-OmniBot:
+The OmniBot and Joystick side by side:
+![PictureWithBoth](./Images/BothPic.jpg)
+
+<!--The OmniBot:
+<img src="./Images/OmniBotPic1.jpg" width="" height="200">
+<img src="./Images/OmniBotPic2.jpg" width="" height="200">
+-->
+
+Inside the joystick:
+![PictureWithBoth](./Images/JoystickRealPic2.jpg)
+
+Rendered pictures of the 3D model I created using parts from [GrabCAD](https://grabcad.com/library) combined with my own models designed for 3D printing. Made in real-world scale and was designed using `Solidworks`:
+
 ![Pic1](./Images/Pic1.JPG)
-![Pic2](./Images/Pic2.JPG)
-
-OmniBot Joystick:
 ![JoystickPic1](./Images/JoystickPic1.JPG)
-![JoystickPic2](./Images/JoystickPic2.JPG)
+
+For more images, please see the [images folder](https://github.com/AshishA26/OmniBot/tree/master/Images) of this repo.
