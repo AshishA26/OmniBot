@@ -7,13 +7,10 @@ Some very short demos below (click on each one to visit the full video):
 [![Link to youtube video](./Images/ParallelPark.gif)](https://www.youtube.com/watch?v=i19Mjydu3dY)
 [![Link to youtube video](./Images/DirectionDemo.gif)](https://www.youtube.com/watch?v=ooEIl0JvQ7g)
 
-## Instructions
+## Notes
 - Upload the OmniBot-Joystick.ino in the `src/OmniBot-Joystick` folder to the joystick
 - The entire `Platform IO` project is to be uploaded to the OmniBot
-- More coming soon
-
-## Note
-The OmniBot-Joystick is a slightly modified version of my [RC-Joystick](https://github.com/AshishA26/RC-Joystick).
+- The OmniBot-Joystick is a slightly modified version of my [RC-Joystick](https://github.com/AshishA26/RC-Joystick).
 
 ## Schematics
 Schematic for the OmniBot:
