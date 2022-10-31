@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "OmniBot"
 Date "2022-01-19"
-Rev "2"
+Rev "3"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -471,15 +471,15 @@ Text GLabel 1700 4350 0    50   Output ~ 0
 CE
 Text GLabel 8000 5800 2    50   Output ~ 0
 SCK
-Text GLabel 1700 2550 0    50   Input ~ 0
+Text GLabel 1700 2350 0    50   Input ~ 0
 SCK
 Text GLabel 8000 5950 2    50   Output ~ 0
 MOSI
 Text GLabel 8000 6100 2    50   Input ~ 0
 MISO
-Text GLabel 1700 2450 0    50   Output ~ 0
+Text GLabel 1700 2550 0    50   Output ~ 0
 MISO
-Text GLabel 1700 2350 0    50   Input ~ 0
+Text GLabel 1700 2450 0    50   Input ~ 0
 MOSI
 Wire Wire Line
 	7000 2150 6600 2150
@@ -539,9 +539,9 @@ Wire Wire Line
 Wire Wire Line
 	1700 2350 1850 2350
 Wire Wire Line
-	1700 2450 1850 2450
-Wire Wire Line
 	1700 2550 1850 2550
+Wire Wire Line
+	1700 2450 1850 2450
 Wire Wire Line
 	1700 4250 1850 4250
 Wire Wire Line
